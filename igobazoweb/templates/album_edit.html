@@ -1,0 +1,255 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block scripts %}
+    {{ block.super }}
+    <script>
+    var count =0;
+    $(document).ready(function() {
+  	  $('.chkbx').click(function() {
+  		 var text= "";	 
+  		 
+  		 if(count <= 4) {
+  		 $('.chkbx:checked').each(function(){					
+  		 		text+='#' + $(this).val() + '  ';
+  		 });		 
+			 } else {
+				alert("최대 5개 이상 입력하실 수 없습니다..");  				
+			 }    		 
+  		 text=text.substring(0,text.length-1);
+  		 $("#a_note").val(text);
+  		 count = $("[type='checkbox']:checked").length;
+  		 $('#count').val($("[type='checkbox']:checked").length);			 	
+
+  	  });
+    });    
+      function updateAlbum() {
+
+        var atitle = document.getElementById("a_title").value;
+
+        if (atitle == "") {
+            alert("제목을 넣어 주세요.");
+            document.getElementById("a_title").focus();
+            return false;
+        }
+
+
+        document.getElementById("frmAlbum").submit();
+
+      }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+{% include "navbar.html" %}
+
+
+	<div id = "middle">
+    <main id="main">
+
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+          <div class="container">
+
+            <div class="section-title" data-aos="fade-up">
+				<h3 id = "rv_tb">Comment 수정하기</h3>
+				
+                <form method="POST" enctype="multipart/form-data" action="album_update" id="frmAlbum">
+                    <input type="hidden" id="a_no" name="a_no" value="{{ a_no }}" >
+                {% for i in rsDetail %}
+                    {% csrf_token %}
+                    <table id = "tbc">
+                        <tr>
+                            <td width="20%" align="center">제목</td>
+                            <td width="80%" align="left">
+                                <input type="input" placeholder="제 목" name="a_title" id="a_title" style="width:100%;" value="{{ i.a_title }}">
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td width="20%" align="center" rowspan="2">이미지</td>
+                            <td width="80%" align="left" style="padding:10px 0;">
+                            <br>
+                            <input type = "file" name="ufile" id="ufile" >
+                            <br><br>
+							</td>
+                        </tr>
+                        <tr>
+                        	<td width="80%" align="center" style="padding:10px 0;">
+                            <img src="{% static 'board/photos/' %}{{ i.a_image }}" class="img-fluid" alt="" style="width:45%;" align = "left">
+                            </td>                        
+                        </tr>
+        			    <tr>
+                            <th width="20%" align="center" rowspan="5">키워드</th>
+                            <!-- <td width="80%" align="left">  -->            
+                        </tr>
+                        <tr>
+                            <td align="left">
+                     	
+                            	<label class="checkbox1">
+                                	<input type="checkbox" class="chkbx" value="감성적인">
+                                	<span class="icon"></span>
+                                	<span class="text"> 감성적인</span>
+                                </label>       	
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx" value="스릴있는">
+                                	<span class="icon"></span>
+                                	<span class="text"> 스릴있는</span>
+                                </label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="약빤거같은">
+                                	<span class="icon"></span>
+                                	<span class="text"> 약빤거같은</span>
+                                </label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                       
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="B급 감성인">
+                                	<span class="icon"></span>
+                                	<span class="text"> B급 감성인</span>
+                                </label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="유퀘상퀘통퀘한">
+                                	<span class="icon"></span>
+                                	<span class="text"> 유퀘상퀘통퀘한</span>
+                                </label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="액션이 화끈한">
+                                	<span class="icon"></span>
+                                	<span class="text"> 액션이 화끈한</span>
+                                </label>                         
+                            </td>                          
+                        </tr>   
+                        <tr>
+                            <td align="left">
+                            <br>
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="피식거리게 되는">
+                                	<span class="icon"></span>
+                                	<span class="text"> 피식거리게 되는</span>
+                                </label>  
+                                &nbsp;&nbsp;
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="빅재미를 주는">
+                                	<span class="icon"></span>
+                                	<span class="text"> 빅재미를 주는</span>
+                                </label> 
+                                &nbsp;
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="스트레스 날려주는">
+                                	<span class="icon"></span>
+                                	<span class="text"> 스트레스 날려주는</span>
+                                </label> 
+                                &nbsp;&nbsp;                            
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="잔인한">
+                                	<span class="icon"></span>
+                                	<span class="text"> 잔인한</span>
+                                </label> 
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="차별화된">
+                                	<span class="icon"></span>
+                                	<span class="text"> 차별화된</span>
+                                </label> 
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="대중적인">
+                                	<span class="icon"></span>
+                                	<span class="text"> 대중적인</span>
+                                </label> 
+                                &nbsp;&nbsp;&nbsp;&nbsp;                 
+                            </td>                         
+                        </tr>
+                        <tr>      	
+                            <td align="left">
+                            <br>
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="냉소적인">
+                                	<span class="icon"></span>
+                                	<span class="text"> 냉소적인</span>
+                                </label> 
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="답답한">
+                                	<span class="icon"></span>
+                                	<span class="text"> 답답한</span>
+                                </label> 
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="거침없는">
+                                	<span class="icon"></span>
+                                	<span class="text"> 거침없는</span>
+                                </label>                          
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="폭력적인">
+                                	<span class="icon"></span>
+                                	<span class="text"> 폭력적인</span>
+                                </label> 
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="짜릿한">
+                                	<span class="icon"></span>
+                                	<span class="text"> 짜릿한</span>
+                                </label> 
+ 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class="checkbox1">
+                                	<input type="checkbox" class="chkbx"  value="시원한">
+                                	<span class="icon"></span>
+                                	<span class="text"> 시원한</span>
+                                </label> 
+ 							<br>                         
+                            </td>                         
+                        </tr>
+                        <tr>
+                        	<td align="left">
+                        	<br>
+                        	키워드 갯수&nbsp;&nbsp;:&nbsp;&nbsp;
+                        	<input type='text' id='count' readonly>
+                        	&nbsp;&nbsp;&nbsp;&nbsp;
+                        	%&nbsp;&nbsp;최대 5개까지 선택 가능합니다.<br><br>
+                        	</td>
+                        </tr>                      
+                        
+                        <tr style="height:45px;border-top:solid 1px #dddddd;">
+                            <td width="20%" align="center">내용</td>
+                            <td width="80%" align="left"><textarea name="a_note" id="a_note" style="width:100%;" rows="5">{{ i.a_note }}</textarea></td>
+                        </tr>
+                        <tr style="height:45px;border-top:solid 1px #dddddd;" align="center">
+                            <td width="100%" colspan="2">
+                                <span class="btn btn-danger btn-lg" style="margin-right:10px;" onclick="updateAlbum()">저장</span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="index">
+                                <span class="btn btn-danger btn-lg" style="margin-right:10px;">목록</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                {% endfor %}
+                </form>
+
+            </div>
+
+          </div>
+        </section><!-- End Services Section -->
+
+    </main><!-- End #main -->
+	</div>
+    {% include "footer.html" %}
+
+{% endblock %}

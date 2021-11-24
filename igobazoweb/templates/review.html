@@ -1,0 +1,165 @@
+{% load static %}
+{% load mathfilters %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>게시판</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width,initial-scale=1">		
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+		<!--  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">  -->
+		<link rel="stylesheet" type="text/css" href="{% static 'board.css' %}">			
+		
+		<script src="{% static 'jquery-3.6.0.js'%}"></script>
+		<script src="{% static 'script_board.js'%}"></script>
+	</head>
+	<body>
+	<!--  <form action="modifyprohong">   -->
+		{% csrf_token %}
+		<div class="navbar">
+			 
+			<div class="brand d-i">
+				
+				<a href="index">IGOBAZO</a>
+			</div>	 
+			
+			
+			<div class="searchbar d-i" >
+				<form class="searchform" role="search" method="GET" action="searchpro">
+					<input type="text" name="barbar" placeholder="search by title"/>
+					<button type="submit" class="btn btn-default">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 32"><path d="M20.576 14.848q0-3.296-2.336-5.632t-5.664-2.368-5.664 2.368-2.336 5.632 2.336 5.664 5.664 2.336 5.664-2.336 2.336-5.664zm9.152 14.88q0 .928-.704 1.6t-1.6.672q-.96 0-1.6-.672l-6.112-6.112q-3.2 2.208-7.136 2.208-2.56 0-4.896-.992t-4-2.688-2.688-4T0 14.848t.992-4.864T3.68 5.952t4-2.688 4.896-.992 4.896.992 4 2.688 2.688 4.032.992 4.864q0 3.936-2.208 7.136l6.112 6.112q.672.672.672 1.632z"></path></svg>
+					</button>
+				</form>
+			</div>
+			
+			{% if not id %}
+			<a class="login navlink" href="login">로그인</a>
+			<a class="register navlink" href="register">회원가입</a>	
+			{% endif %}
+			{% if id %}
+			<a class="login navlink" href="logout">로그아웃</a>
+			<a class="register navlink" href="userinfo">회원정보</a>	
+			{% endif %}		
+		</div>
+		
+		
+		<div id="middle">
+			<div id="tb">				
+		<table id="tbc">
+				<caption id="rv_tb">
+				<br><br>
+					&nbsp;&nbsp;&nbsp;영화 리뷰 게시판<br><br>
+				</caption>
+			<tr>
+					<th style width="7%">번 호</th>
+					<th style width="21%">영 화</th>
+					<th style width="25%">제 목</th>
+					<th style width="10%">작성자</th>
+					<th style width="10%">작성일</th>
+					<th style width="8%">별 점</th>
+					<th style width="10%">공 감</th>
+					<th style width="10%">조 회</th>
+			</tr>
+			{% if count == 0 %}
+				<!-- 글이 없는 경우 -->
+				<tr>
+					<td align="center" colspan="8"> 
+						게시판에 글이 없습니다. 글쓰기를 선택해 주세요.
+					</td>
+				</tr>				
+			{% endif %}
+			{% if count > 0 %}
+				<!-- 글이 있는 경우 -->
+				{% for dto in dtos %}
+					<tr>
+						<td align="center"> 
+							{{number|sub:forloop.counter0}}
+						</td>
+						<td align="left">
+								<a class = "tbclk" href="detail?num={{dto.num}}&pagenum={{pagenum}}&number={{number|sub:forloop.counter0}}">
+									{{dto.movie_subject}}
+								</a>						
+						</td>						
+						<td align="left">						
+							{% if dto.readcount == -1 %}
+								{{ dto.subject }}
+							{% endif %}
+							{% if dto.readcount != -1 %}
+								<a class = "tbclk" href="detail?num={{dto.num}}&pagenum={{pagenum}}&number={{number|sub:forloop.counter0}}">
+									{{ dto.subject }}
+								</a>	
+							{% endif %}
+						</td>
+						<td align="center"> <!-- 작성자 -->
+							{{ dto.writer }}
+						</td>
+						<td align="center"> <!-- 작성일 -->
+							{{ dto.regdate|date:"Y-m-d"}}<br>
+							{{ dto.regdate|date:"H:i" }}
+						</td>
+						<td align="center"><img src="{% static 'star.png'%}" width="20" height="20">&nbsp;&nbsp;{{dto.starpoint}}</td> <!-- 별점 -->
+						<td align="center"><img src="{% static 'popcorn.png'%}" width="20" height="20">&nbsp;&nbsp;{{dto.sympathy}}</td> <!-- 공감 -->												 
+						<td align="center"> <!-- 조회수  -->
+							{% if dto.readcount == -1 %}
+								{{0}}
+							{% endif %}
+							{% if dto.readcount != -1 %}
+								{{ dto.readcount }}
+							{% endif %}
+						</td>		
+					</tr>			
+				{% endfor %}
+			{% endif %}			
+		</table>
+		<br>
+		<div id = "pg_blk">
+		{% if startpage > pageblock %}
+			<a id="page" href="review">[◀◀]</a>		
+			<a id="page" href="review?pagenum={{startpage|sub:pageblock}}">[◀]</a>		
+		{% endif %}
+		
+		{% for page in pages %}
+			{% if page == pagenum %}
+				<b id="page">[{{page}}]&nbsp;</b>
+			{% endif %}			
+			{% if page != pagenum %}
+				<a id="page2" href="review?pagenum={{page}}">[{{page}}]</a>
+			{% endif %}
+		{% endfor %}
+		
+		{% if endpage < pagecount %}
+			<a id="page" href="review?pagenum={{startpage|add:pageblock}}">[▶]</a>	
+			<a id="page" href="review?pagenum={{pagecount}}">[▶▶]</a>		
+		{% endif %}	
+		</div>
+		
+			<!-- <div id = "wr_wrap">
+					
+					<a href="writeprohong" class="btn btn-danger btn-lg" role="button">
+					&nbsp;&nbsp;&nbsp;&nbsp;글 쓰 기&nbsp;&nbsp;&nbsp;&nbsp;
+					</a>
+			</div>   -->
+			
+			</div>
+		
+		</div>
+		<div id="footer">
+			<p>
+				본 콘텐츠의 저작권은 저작권자 또는 제공처에 있으며, 이를 무단으로 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.<br><br>
+				주소 : 서울 마포구 신촌로 94 그랜드플라자 7층<br>
+				Copyright(c) 2021 IGOBAZO
+			</p>
+		</div>		
+		
+	</body>
+</html>
+
+
+
+
+
+

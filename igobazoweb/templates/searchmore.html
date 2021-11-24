@@ -1,0 +1,128 @@
+{% load static %}
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="author" content="신재현">
+		<meta name="description" content="이거봐조 영화 추천 & 리뷰 사이트 프로젝트">
+		<meta name="keywords" content="이거봐조, IGOBAZO, 영화, 최신영화, 리뷰, 영화추천">
+		<title> IGOBAZO </title>
+		
+		<!--  jquery 라이브러리 -->
+		<script src="../static/js/jquery-3.6.0.js"></script>
+		
+		<!-- CSS -->
+		<!-- 합쳐지고 최소화된 최신 CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel ="stylesheet"href="../static/css/header.css">
+		<!-- 부가적인 테마 -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		
+		<!-- CSS 라이브러리 -->
+		<link rel="stylesheet"  type="text/css"  href="../static/css/reset.css">
+		<link rel="stylesheet"  type="text/css"  href="../static/css/style.css">
+		<link rel="stylesheet"  type="text/css"  href="../static/css/header.css">
+		
+		<!-- 젬마 css -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+		
+		<!-- 자바스크립트 라이브러리 -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+	</head>
+	<body>
+		{% csrf_token %}	
+		<div class="navbar">
+			 
+			<div class="brand d-i">
+				<a href="index">IGOBAZO</a>
+			</div>	 
+			
+			
+			<div class="searchbar d-i" >
+				<form class="searchform" role="search" method="GET" action="searchpro">
+					<input type="text" name="barbar" placeholder="search by title"/>
+					<button type="submit" class="btn btn-default">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 32"><path d="M20.576 14.848q0-3.296-2.336-5.632t-5.664-2.368-5.664 2.368-2.336 5.632 2.336 5.664 5.664 2.336 5.664-2.336 2.336-5.664zm9.152 14.88q0 .928-.704 1.6t-1.6.672q-.96 0-1.6-.672l-6.112-6.112q-3.2 2.208-7.136 2.208-2.56 0-4.896-.992t-4-2.688-2.688-4T0 14.848t.992-4.864T3.68 5.952t4-2.688 4.896-.992 4.896.992 4 2.688 2.688 4.032.992 4.864q0 3.936-2.208 7.136l6.112 6.112q.672.672.672 1.632z"></path></svg>
+					</button>
+				</form>
+			</div>
+			
+			{% if not id %}
+			<a class="login navlink" href="login">로그인</a>
+			<a class="register navlink" href="register">회원가입</a>	
+			{% endif %}
+			{% if id %}
+			<a class="login navlink" href="logout">로그아웃</a>
+			<a class="register navlink" href="userinfo">회원정보</a>	
+			{% endif %}		
+		</div>
+		
+		<!-- search result -->
+		
+		<section id="result">
+			<div class="container">
+				<div class="row">
+					<div class="status">
+						<h3>{{query}}의 검색결과 ( {{cnt}} )</h3>
+					</div>
+					<div class="result_board">
+						{% for c in contents %}
+						<div class="value_content">
+							<div class="poster">
+								<img src="{{c.poster}}" alt="{{c.contentNm}}" onclick="location='detailpage?contentCd={{c.contentCd}}&media_type={{c.media_type}}'">
+							</div>
+							<div class="info">
+								<p class="title"><a href="detailpage?contentCd={{c.contentCd}}&media_type={{c.media_type}}"><b>{{c.contentNm}}({{c.originalNm}})</b></a><p>
+								<p class="star"><b>★</b><em>(참여 : 명)</em></p>
+								<p class="detailinfo"> {{c.release_date}}</p>
+								<p class="detailinfo"> {{c.genre}}</p>
+								<p class="overview">{{c.overview}}</p>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- //search result -->
+		
+		<!-- footer -->
+		<footer id="footer">
+			<div id="footer_infor">
+				<div class="container">
+					<div class="row">
+						<div class="footer_infor">
+							<ul>
+								<li><a href="#">소개</a></li>
+								<li><a href="#">제휴/광고/부대사업 문의</a></li>
+								<li><a href="#">이용약관</a></li>
+								<li><a href="#">개인정보처리방침</a></li>
+								<li><a href="#">고객센터</a></li>
+								<li><a href="#">윤리경영</a></li>
+							</ul>
+							<address>
+								<p>서울특별시 마포구 신촌로 94 그랜드플라자 7층 <br><span class="bar2">Igobazo팀 : 김도헌, 신재현, 이남정, 윤홍주, 정한젬마 </span></p>
+								<p>Web Project : IGOBAZO. 영화 리뷰 사이트 만들기</p>
+							</address>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- //footer -->
+		
+		
+		
+		
+	</body>
+</html>

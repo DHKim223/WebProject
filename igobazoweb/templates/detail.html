@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> IGOBAZO </title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'board.css' %}">	
+		<script src="{% static 'jquery-3.6.0.js'%}"></script>
+		<script src="{% static 'script_register.js'%}"></script>	
+		
+	</head>
+	<body>
+		<!-- 젬마님 navbar -->
+		{% csrf_token %}
+		<div class="navbar">
+			<!--  
+			<div>
+			<img src="/static/image/IGOBAZOLOGO.jpg" width="200" height="24" alt="igobazoindex" class="btn" onclick="location='index'">
+			</div>
+			-->
+			 
+			<div class="brand d-i">
+				<!--  <img src="/static/image/logo2.jpg" width="200" height="24" alt="igobazoindex" class="btn" onclick="location='index'">	-->
+				<a href="index">IGOBAZO</a>
+			</div>	 
+			
+			
+			<div class="searchbar d-i" >
+				<form class="searchform" role="search" method="GET" action="searchpro">
+					<input type="text" name="barbar" placeholder="search by title"/>
+				<!-- <a class="magnifying-icon" href="searchpro"> -->
+				<!-- </a> -->
+					<button type="submit" class="btn btn-default">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 32"><path d="M20.576 14.848q0-3.296-2.336-5.632t-5.664-2.368-5.664 2.368-2.336 5.632 2.336 5.664 5.664 2.336 5.664-2.336 2.336-5.664zm9.152 14.88q0 .928-.704 1.6t-1.6.672q-.96 0-1.6-.672l-6.112-6.112q-3.2 2.208-7.136 2.208-2.56 0-4.896-.992t-4-2.688-2.688-4T0 14.848t.992-4.864T3.68 5.952t4-2.688 4.896-.992 4.896.992 4 2.688 2.688 4.032.992 4.864q0 3.936-2.208 7.136l6.112 6.112q.672.672.672 1.632z"></path></svg>
+					</button>
+				</form>
+			</div>
+			
+			{% if not id %}
+			<a class="login navlink" href="login">로그인</a>
+			<a class="register navlink" href="register">회원가입</a>	
+			{% endif %}
+			{% if id %}
+			<a class="login navlink" href="logout">로그아웃</a>
+			<a class="register navlink" href="userinfo">회원정보</a>	
+			{% endif %}		
+		</div>
+		
+		<div id="middle">
+							
+			<div id="tb2">
+				<table id = "tbc3" border = "1">
+				<caption id="rv_tb">
+					&nbsp;&nbsp;&nbsp;영화 리뷰 글보기<br><br>						
+				</caption>	
+					
+				<tr>
+					<th style width="16%"> 영화 제목 </th>
+					<td colspan="5"> {{dto.movie_subject}} </td> 
+				</tr>			
+				<tr>
+					<th> 제목 </th>
+					<td colspan="5"> {{dto.subject}} </td> 
+				</tr>				
+				<tr>
+					<th> 글번호 </th>
+					<td style width="17%"> {{number}} </td>				
+
+					<th style width="16%"> 공감 </th>
+					<td style width="15%"><img src="{% static 'popcorn.png'%}" width="25" height="25">&nbsp; {{dto.sympathy}}</td>	
+					
+					<th style width="16%"> 조회수 </th> 
+					<td style width="15%"> {{dto.readcount}}<br><img src="{% static 'look.png'%}" width="60" height="25"> </td>
+				</tr>
+				<tr>
+					<th> 작성자 </th>
+					<td> {{dto.writer}} </td>
+					
+					<th> 별점 </th>
+					<td><img src="{% static 'star.png'%}" width="25" height="25">&nbsp; {{dto.starpoint}}</td>
+											
+					<th> 작성일 </th>
+					<td> 
+						{{dto.regdate|date:"Y-m-d"}}<br>
+						{{dto.regdate|date:"H : i"}}
+					</td>
+				</tr>
+				<tr>
+					<th > 내용 </th>
+					<td colspan="5" > <pre id="dt_txar">{{dto.content}}</pre> </td> 
+				</tr>
+				<tr>
+					<th> ▷▷ </th>
+					<td colspan="4">
+						이 글에 공감하시나요? 그럼 옆 버튼을 눌러주세요!
+					</td>
+					<td>
+						{% csrf_token %}
+						<form method="post" action="detailsymp">					
+							<input type="hidden" name="sympathy" value="{{dto.sympathy}}">
+							<input type="hidden" name="num" value="{{dto.num}}">
+							<!-- <button type="submit" class="btn btn-danger btn-lg">
+							확  인;
+							</button> -->
+							<input id ="btn5" type="submit" value="">							
+											
+						</form>	 
+					</td>
+				</tr>				
+		</table>	
+			<div id="dt_clk">
+				<br>
+					<!-- <input id="write" type="button" value="글수정"
+						onclick="location='modifyview?num={{dto.num}}&pagenum={{pagenum}}&number={{number}}'">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input id="write" type="button" value="글삭제"
+						onclick="location='deletepro?num={{dto.num}}&pagenum={{pagenum}}'">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input id="write" type="button" value="목록"
+						onclick="location='review?pagenum={{pagenum}}'">  	-->
+	
+					<a href="review" class="btn btn-danger btn-lg" role="button">
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						목&nbsp;&nbsp;&nbsp;&nbsp;록
+						&nbsp;&nbsp;&nbsp;&nbsp;
+					</a>	
+					
+					
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					<input id ="btn1" type="button" 
+						onclick="location='modifyviewhong?num={{dto.num}}&pagenum={{pagenum}}&number={{number}}'">
+						<!-- 	onclick="location='modifyviewhong?num={{dto.num}}&pagenum={{pagenum}}&number={{number}}&movieCd={{movieCd}}'">  -->
+												
+					&nbsp;&nbsp;
+					<input id ="btn2" type="button" 
+							onclick="location='deleteprohong?num={{dto.num}}&pagenum={{pagenum}}'">
+						<!-- 	onclick="location='deleteprohong?num={{dto.num}}&pagenum={{pagenum}}&movieCd={{movieCd}}'">  -->	
+				</div>	
+					<br>
+					
+					<br>
+					<br>	
+			</div>		
+		</div>
+
+		
+		<div id="footer">
+			<p>
+				본 콘텐츠의 저작권은 저작권자 또는 제공처에 있으며, 이를 무단으로 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.<br><br>
+				주소 : 서울 마포구 신촌로 94 그랜드플라자 7층<br>
+				Copyright(c) 2021 IGOBAZO
+			</p>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

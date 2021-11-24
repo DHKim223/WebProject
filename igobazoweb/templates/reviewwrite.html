@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>게시판</title>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'board.css' %}">
+		<script src="{% static 'jquery-3.6.0.js'%}"></script>
+		<script src="{% static 'script_board.js'%}"></script>		
+
+   	 	<!-- Favicons -->
+		<link href="{% static 'popcorn.png' %}" rel="icon">		
+		
+	</head>
+	<body>
+		<div class="navbar1">
+			 
+			<div class="brand d-i">
+				
+				<a href="index">IGOBAZO</a>
+			</div>	 
+			
+			
+			 <div class="searchbar d-i" >
+				<form class="searchform" role="search" method="GET" action="searchpro">
+					<input type="text" name="barbar" placeholder="search by title"/>
+					<button type="submit" class="btn btn-default">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 32"><path d="M20.576 14.848q0-3.296-2.336-5.632t-5.664-2.368-5.664 2.368-2.336 5.632 2.336 5.664 5.664 2.336 5.664-2.336 2.336-5.664zm9.152 14.88q0 .928-.704 1.6t-1.6.672q-.96 0-1.6-.672l-6.112-6.112q-3.2 2.208-7.136 2.208-2.56 0-4.896-.992t-4-2.688-2.688-4T0 14.848t.992-4.864T3.68 5.952t4-2.688 4.896-.992 4.896.992 4 2.688 2.688 4.032.992 4.864q0 3.936-2.208 7.136l6.112 6.112q.672.672.672 1.632z"></path></svg>
+					</button>
+				</form>
+			</div> 
+			
+			{% if not id %}
+			<a class="login navlink" href="login">로그인</a>
+			<a class="register navlink" href="register">회원가입</a>	
+			{% endif %}
+			{% if id %}
+			<a class="login navlink" href="logout">로그아웃</a>
+			<a class="register navlink" href="userinfo">회원정보</a>	
+			{% endif %}	
+
+		</div>
+		
+		<div id="middle">
+			<div id="tb">		
+		{% csrf_token %}
+		<form method="post" action="writeprohong" onsubmit="return writecheck()">
+			<input type="hidden" name="num" value="{{num}}">
+			<input type="hidden" name="ref" value="{{ref}}">
+			<input type="hidden" name="restep" value="{{restep}}">
+			<input type="hidden" name="relevel" value="{{relevel}}">
+			<input type="hidden" name= "contentCd" value="{{contentCd}}" readonly>
+			<input type="hidden" name= "media_type" value="{{media_type}}" >
+			<input type="hidden" name= "title" value="{{title}}">
+						
+			<table id = "tbc2">
+				<caption id="rv_tb">
+					&nbsp;&nbsp;&nbsp;영화 리뷰 글쓰기<br><br>
+				</caption>
+				<tr>
+					<th> 작 성 자 </th>
+					<td align ="left"><input id="input" type="text" name="writer" value="{{nickname}}" readonly></td>
+				</tr>
+				<tr>
+					<th> 비밀번호 </th>
+					<td align ="left"><input id="input" type="password" name="passwd2" autofocus> </td>
+				</tr>				
+				<!-- <tr>
+					<th>영화 제목</th>
+					<td align ="left">
+						<input id="input2" type="text" name="movie_subject" value="{{title}}" readonly> 
+						&nbsp;&nbsp;Serial Num : <input id="input" type="text" name="ContentCd" value="{{ContentCd}}" readonly>
+					</td>
+				</tr> -->
+				<tr>
+					<th> 제목 </th>
+					<td align ="left">
+						<input id="input2" type="text" name="subject">
+						&nbsp;&nbsp;Serial Num : <input id="input" type="text" name="contentCd" value="{{contentCd}}" readonly>		
+					</td>
+				</tr>
+				<!--<tr>
+					<th>별점</th>
+					<td align ="left"><img src="{% static 'star_pt.png'%}" width="157" height="25"><br>
+						<input id="input" type="range" min="1" max="5" value="1" name="starpoint">	    
+					</td>				
+				</tr>  -->				
+				<tr>
+					<th> 내용 </th>
+					<td align ="left">
+						<textarea id="txarea" rows="12" cols="70" name="content"></textarea>
+					</td>
+				</tr>
+				<!-- 
+				<tr>
+					 <th colspan="2">
+						<input id="write" type="submit" value="전송">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input id="write" type="button" value="목록"	
+							onclick="location='review'">
+					</th>
+				</tr>
+				-->	
+			</table>
+			<br>
+			<br>
+				<div id="wr_clk">				
+				<!--  <input id="write" type="submit" value="전송"> -->	
+			
+				<button type="submit" class="btn btn-danger btn-lg">
+				&nbsp;&nbsp;&nbsp;&nbsp;확  인&nbsp;&nbsp;&nbsp;&nbsp;
+				</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<!--  <input id="write" type="button" value="목록"	
+						   onclick="location='review'"> -->
+						   
+					<a href="index" class="btn btn-danger btn-lg" role="button">
+					&nbsp;&nbsp;&nbsp;&nbsp;목  록&nbsp;&nbsp;&nbsp;&nbsp;
+					</a>
+				
+				</div>	
+				
+		</form>		
+			</div>
+		</div>
+
+		<div id="footer">
+			<p>
+				본 콘텐츠의 저작권은 저작권자 또는 제공처에 있으며, 이를 무단으로 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.<br><br>
+				주소 : 서울 마포구 신촌로 94 그랜드플라자 7층<br>
+				Copyright(c) 2021 IGOBAZO
+			</p>
+			
+		</div>
+
+		
+	</body>
+</html>
+
+
+
+
+
+
+

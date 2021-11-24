@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="author" content="신재현">
+		<meta name="description" content="이거봐조 영화 추천 & 리뷰 사이트 프로젝트">
+		<meta name="keywords" content="이거봐조, IGOBAZO, 영화, 최신영화, 리뷰, 영화추천">
+		<title> IGOBAZO </title>
+		
+		<!--  jquery 라이브러리 -->
+		<script src="../static/js/jquery-3.6.0.js"></script>
+		
+		<!-- CSS -->
+		<!-- 합쳐지고 최소화된 최신 CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel ="stylesheet"href="../static/css/header.css">
+		<!-- 부가적인 테마 -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		
+		<!-- CSS 라이브러리 -->
+		<link rel="stylesheet"  type="text/css"  href="../static/css/reset.css">
+		<link rel="stylesheet"  type="text/css"  href="../static/css/style.css">
+		<link rel="stylesheet"  type="text/css"  href="../static/css/header.css">
+		
+		
+		<!-- 자바스크립트 라이브러리 -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+	</head>
+	<body>
+		
+		<!-- header -->
+		<header id="header">
+			<div class="container">
+				<div class="row">
+					<nav class="navbar navbar-default navbar-fixed-top">
+						<div class="container-fluid">
+							<!-- navber header -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="igobazo-navbar">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<a class="navbar-brand" href="#"><img src="../static/images/logo.png"></a>
+							</div> <!-- //navbar header -->
+							
+							<!-- navbar ul -->
+							<div class="collapse navbar-collapse" id="igobazo-navbar">
+								<ul class="nav navbar-nav">
+									<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+									<li><a href="#">리뷰</a></li>
+									{% if not id  %}
+									<li><a href="login">로그인</a></li>
+									<li><a href="register">회원가입</a></li>
+									{% endif %}
+									{% if id %}
+									<li><a href="userinfo">회원정보</a></li>
+									<li><a href="logout">로그아웃</a></li>
+									{% endif %}
+								</ul>
+								<form class="navbar-form navbar-right" role="search" action="searchpro">
+									<div class="form-group">
+										<input type="text" class="form-control" name="searchbar" placeholder="제목을 검색해보세요">
+									</div>
+									<button type="submit" class="btn btn-default">검색</button>
+								</form>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>		
+		</header>
+		<!-- //header -->
+		
+		<!-- search result -->
+		
+		<section id="result">
+			<div class="container">
+				<div class="row">
+					<div class="status">
+						<h3>"{{str}}"의 검색결과</h3>
+					</div>
+					<div class="result_board">
+						
+						<div class="value_movie">
+							<div class="poster">
+								<img src="../static/images/poster1.jpg" alt="이름" onclick="location='movie_detail?movieCd={{movieCd}}'">
+							</div>
+							<div class="info">
+								<p class="title"><a href="#"><b>영화 제목(영문제목)</b></a><p>
+								<p class="star"><b>별점★</b><em>(참여 : 명)</em></p>
+								<p class="detailinfo">장르 | 제작국가 | 상영시간 | 개봉일</p>
+								<p class="people">감독 : | 출연 : </p>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- //search result -->
+		
+		<!-- footer -->
+		<footer id="footer">
+			<div id="footer_infor">
+				<div class="container">
+					<div class="row">
+						<div class="footer_infor">
+							<ul>
+								<li><a href="#">소개</a></li>
+								<li><a href="#">제휴/광고/부대사업 문의</a></li>
+								<li><a href="#">이용약관</a></li>
+								<li><a href="#">개인정보처리방침</a></li>
+								<li><a href="#">고객센터</a></li>
+								<li><a href="#">윤리경영</a></li>
+							</ul>
+							<address>
+								<p>서울특별시 마포구 신촌로 94 그랜드플라자 7층 <br><span class="bar2">Igobazo팀 : 김도헌, 신재현, 이남정, 윤홍주, 정한젬마 </span></p>
+								<p>Web Project : IGOBAZO. 영화 리뷰 사이트 만들기</p>
+							</address>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- //footer -->
+		
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,545 @@
+
+a.main {
+	font-family : impact;
+	font-weight : 900;
+	font-size:60px;
+	color: red;
+	text-align:left;
+	text-decoration:none; 
+	text-shadow: 5px 3px 5px #ae0000;
+	padding : 0 40px;
+}
+
+a.search {
+	font-family : arial;
+	font-size:25px;
+	color: red;
+	text-decoration:none; 
+	text-shadow: 5px 3px 5px #ae0000;	
+}
+
+a.my:link {
+	font-family : arial;
+	font-size:30px;
+	color: white;
+	text-align:left;
+	text-decoration:none;
+	font-weight : 700;	
+	padding : 0 30px;
+}
+
+a.my:hover {
+	font-family : arial;
+	font-size:30px;
+	color: red;
+	text-align:left;
+	text-decoration:none;
+	font-weight : 700;	
+	text-shadow: 5px 3px 5px #ae0000;
+	padding : 0 30px;
+}
+
+
+a.review {
+	font-family : arial;
+	font-size:30px;
+	color: red;
+	font-weight : 700;	
+	text-decoration:none; 
+	text-shadow: 5px 3px 5px #ae0000;
+}
+
+a.logout:link {
+	font-family : arial;
+	font-size:30px;
+	color: white;
+	font-weight : 700;	
+	text-decoration:none; 	
+}
+
+a.logout:hover {
+	font-family : arial;
+	font-size:30px;
+	color: red;
+	font-weight : 700;	
+	text-decoration:none; 
+	text-shadow: 5px 3px 5px #ae0000;	
+}
+
+a.write {
+	font-family : impact;
+	font-weight : 900;
+	font-size:25px;
+	color: white;
+	text-decoration:none; 
+}
+
+#tbc {
+		width: 1360px;
+		border-top: 1px solid gray;
+		border-collapse:coplase;
+		background-image: url('table.png');
+		background-repeat: no-repeat;
+		background-size: 1360px 1100px;	
+		color: white;
+	}
+
+
+#tbc th {
+		font-family : arial;
+		text-align : center;
+    	border-bottom: 1px solid gray;
+    	padding: 10px;
+		font-weight : 900;
+		height : 35px;
+		font-size : 21px;
+		color : gray;
+}
+
+#tbc td {	
+		font-family : arial;
+    	border-bottom: 1px solid gray;
+    	padding: 10px;
+		color : white;
+		font-weight : 700;
+		height : 35px;
+		font-size : 19px;
+	}
+
+
+#tbc2 {
+		width: 100%;
+		border-top: 1px solid black;
+		border-collapse:coplase;
+		background-image: url('table2.png');
+		background-repeat: no-repeat;
+		background-size: 940px 1000px;	
+		background-color:black;
+		background-position : right center;
+		color: white;
+	}	
+
+
+#tbc2 th {
+		font-family : arial;
+		text-align : center;
+    	border-bottom: 1px solid gray;
+    	padding: 10px;
+		font-weight : 900;
+		height : 35px;
+		font-size : 21px;
+		width : 25%;
+		color : gray;
+}
+
+#tbc2 td {	
+		width :75%;
+		font-family : arial;
+    	border-bottom: 1px solid gray;
+    	padding: 10px;
+		color : white;
+		font-weight : 700;
+		height : 35px;
+		font-size : 22px;
+	}
+
+
+#dt_tb {
+	text-align : left;
+	font-weight : 700;
+	font-size : 40px;
+	color : white;
+}
+
+#tbc5 {
+		width: 100%;
+		border-top: 1px solid black;
+		border-collapse:coplase;
+		background-image: url('table2.png');
+		background-repeat: no-repeat;
+		background-size: 1040px 1000px;	
+		background-color:black;
+		background-position : right center;
+		color: white;
+	}	
+
+
+#tbc5 th {
+		font-family : arial;
+		text-align : center;
+    	border-bottom: 1px solid gray;
+    	padding: 10px;
+		font-weight : 900;
+		height : 35px;
+		font-size : 21px;
+		width : 15%;
+		color : gray;
+}
+
+#tbc5 td {	
+		width : 60%;
+		font-family : arial;
+    	border-bottom: 1px solid gray;
+    	padding: 10px;
+		color : white;
+		font-weight : 500;
+		height : 35px;
+		font-size : 15px;
+	}
+
+
+
+
+#tbc3 {
+		width: 100%;
+		border-top: 1px solid black;
+		border-collapse:coplase;
+		background-image: url('table3.png');
+		background-repeat: no-repeat;
+		background-size: 1300px 1000px;	
+		background-color:black;
+		background-position : left center;
+		color: white;
+	}		
+
+#tbc3 th {
+		font-family : arial;
+		text-align : center;
+    	border-bottom: 1px solid gray;
+    	padding: 10px;
+		font-weight : 900;
+		height : 35px;
+		font-size : 23px;
+		color : gray;
+}
+
+#tbc3 td {	
+		font-family : arial;
+		text-align : center;
+    	border-bottom: 1px solid gray;
+    	padding: 10px;
+		color : white;
+		font-weight : 600;
+		height : 35px;
+		font-size : 20px;
+	}
+
+#tb3 {
+	padding : 250px 550px;
+	width : 700px;
+	height : 1100px;
+
+}
+
+#tbc4 {
+		width: 1000px;
+		border-top: 1px solid black;
+		border-collapse:coplase;
+		background-image: url('table.png');
+		background-repeat: no-repeat;
+		background-size: 1000px 1200px;	
+		background-color:black;
+		background-position : center;
+		color: white;
+	}		
+
+#tbc4 th {
+		font-family : arial;
+		text-align : center;
+    	border-bottom: 1px solid gray;
+    	padding: 15px;
+		font-weight : 900;
+		font-size : 27px;
+		width : 20%;
+		color : gray;
+}
+
+#tbc4 td {	
+		font-family : arial;
+		text-align : center;
+    	border-bottom: 1px solid gray;
+    	padding: 10px;
+		color : white;
+		font-weight : 700;
+		width : 60%;
+		height : 35px;
+		font-size : 23px;
+	}
+
+
+a.tbclk {
+	font-family : arial;
+	font-size:21px;
+	color: white;
+	font-weight : 700;	
+	text-decoration:none; 	
+}
+
+
+#tb {
+	padding : 10px 110px;
+	width: 1900px;
+	height : 500px;
+}
+
+#mtb {
+	padding : 100px 300px;
+	width: 1230px;
+	height : 500px;
+}
+
+
+#tb2 {
+	padding : 100px 350px;
+	width: 2000px;
+	height : 1300px;
+}
+
+#md_clk {
+		width : 100%;
+		font-weight : 900;	
+		font-size : 23px;
+		text-align : center;
+}
+
+
+#wr_clk {
+		width : 100%;
+		font-weight : 900;	
+		font-size : 23px;
+		text-align : center;
+}
+
+
+
+#page {
+	font-weight : 800;	
+	font-size : 21px;
+	color : white;
+}
+#page2 {
+	font-weight : 600;	
+	font-size : 21px;
+	color : gray;
+}
+
+
+
+
+#input {
+	background-color: gray;
+	opacity: 0.85;
+	border: 2px solid black;
+	font-size : 22px;
+	
+	width: 150px;
+	color : white;
+}
+
+#output {
+	font-size : 22px;
+	width: 150px;
+	color : white;
+}
+
+#input2 {
+	background-color: gray;
+	opacity: 0.85;
+	border: 2px solid black;
+	font-size : 22px;
+	width: 500px;
+	color : white;
+}
+
+#input3 {
+	background-color: gray;
+	opacity: 0.85;
+	border: 2px solid black;
+	font-size : 22px;
+	width: 1000px;
+	color : white;
+}
+
+#txarea {
+	background-color: gray;
+	opacity: 0.85;
+	border: 2px solid black;
+	font-size : 22px;
+	color : white;
+}	
+
+#dt_txar {
+	background-color : gray;
+	font-size : 25px;
+	color : black;
+	height : 520px;
+	opacity: 0.8;
+	text-align : left;
+}
+
+
+#header1 {
+	background-color : black;
+	width : 70%;
+	height : 120px;
+	float : left;
+	padding : 40px 0px;
+}
+
+#header2 {
+	background-color : black;
+	width : 30%;
+	text-align : right;
+	float : right;
+	height : 30px;
+	padding : 60px 0;
+}
+
+#middle {
+	background-color : black;
+	width : 100%;
+	height : 1300px;
+	background-image: url('bgd.png');
+	background-repeat: no-repeat;
+	background-size: 2100px 1300px;
+}
+
+
+#rv_tb {
+	text-align : left;
+	font-weight : 700;
+	font-size : 35px;
+}
+
+
+
+
+#tb {
+	padding : 50px 335px;
+	width: 100%;
+}
+
+#md_tb {
+	padding : 225px 335px;
+	width: 100%;
+}
+
+
+#dt_mg {
+	padding : 10px 0;
+}
+
+
+
+#wr_wrap {
+	padding : 10px 1224px;
+}
+
+#pg_blk {
+	padding : 10px 300px;
+	width: 40%;
+	text-align : center;
+}
+
+
+#footer {
+	background-color : black;
+	width : 100%;
+	height : 150px;
+	color : white;
+	text-align : center;
+	font-weight : 700;
+	font-size : 20px;
+	padding : 30px 0;
+}
+
+#slt_wrap {
+	padding : 0px 20px;
+}
+
+#dt_clk {
+	padding : 5px 10px;
+	text-align : right;
+	height : 100px;
+}
+
+#btn1{
+	width: 80px;
+    height: 110px;	
+    border: none;
+    background: url('btn2.png');
+	background-repeat: no-repeat;
+	background-size: 80px 110px;    
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+#btn3{
+	width: 80px;
+    height: 110px;	
+    border: none;
+    background: url('cancel.png');
+	background-repeat: no-repeat;
+	background-size: 80px 110px;    
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+#btn4{
+	width: 80px;
+    height: 110px;	
+    border: none;
+    background: url('list.png');
+	background-repeat: no-repeat;
+	background-size: 80px 110px;    
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+#btn5{
+	width: 70px;
+    height: 70px;	
+    border: none;
+    background: url('sympathy.png');
+	background-repeat: no-repeat;
+	background-size: 70px 70px;    
+	cursor: pointer;
+	vertical-align: middle;	
+}
+
+#btn5:hover{
+	filter: brightness(85%);
+}
+
+#btn1:hover{
+	filter: brightness(85%);
+}
+
+#btn2:hover{
+	filter: brightness(85%);
+}
+
+#btn3:hover{
+	filter: brightness(85%);
+}
+#btn4:hover{
+	filter: brightness(85%);
+}
+
+#btn2{
+	width: 80px;
+    height: 110px;	
+    border: none;
+    background: url('btn1.png');
+	background-repeat: no-repeat;
+	background-size: 80px 110px;    
+	cursor: pointer;
+	vertical-align: middle;
+	
+}
+
+
+*	{
+	padding:0px;
+	margin:0px;
+}

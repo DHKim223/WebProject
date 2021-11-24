@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+/* Layout */
+
+/* body {padding-top : 70px;} 상단 고정 네비게이션을 위한 body 패딩 */
+
+/* NavBar
+.navbar-brand img {display : inline-block; width :155px; margin : -15px 10px;}
+#igobazo-navbar form {margin-right : 30px;} */
+
+/* footer */
+#footer_infor {background-color : #191C1E; border-top:1px solid #8f8f8f;}
+#footer_infor {padding: 100px 0; width: 100%;}
+#footer_infor h2 img {width: 150px;}
+#footer_infor ul {padding: 15px 0;}
+#footer_infor li {position: relative; display: inline; padding-right: 16px; white-space: nowrap;}
+#footer_infor li:after {content: ''; position: absolute; right: 5px; top: 5px; width: 1px; height: 11px; background: #8f8f8f;}
+#footer_infor li:last-child:after {width: 0; height: 0;}
+#footer_infor li a {color: #8f8f8f;}
+#footer_infor address p {color: #8f8f8f; padding-bottom: 15px;}

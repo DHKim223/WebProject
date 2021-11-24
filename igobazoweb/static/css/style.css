@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+body { padding-top : 70px; background-color : #191C1E;}
+
+.cursor {cursor:pointer;}
+
+/* 배너 슬라이드 */
+.slider {width: 100%; height: 600px;}
+.slider .ss1 {background: url(../images/main_banner_007.jpg) no-repeat center center; background-size: cover;}
+.slider .ss2 {background: url(../images/main_banner_venom2.jpg) no-repeat center center; background-size: cover;}
+.slider .ss3 {background: url(../images/main_banner_dune.jpg) no-repeat center center; background-size: cover;}
+.slider .swiper-slide h2 {position: relative; display: inline-block; font-size: 62px; line-height: 70px; color: #fff; margin-top: 200px;}
+.slider .swiper-slide h2:after {content: ''; width: 100%; height: 1px; background: rgba(255,255,255,0.3); position: absolute; left: 0; bottom: -35px;}
+.slider .swiper-slide h2 em {display: block; font-size: 59px; font-weight: 100;}
+.slider .swiper-slide p {font-size: 27px; color: #fff; padding-top: 55px;}
+
+/* 브릿지 */
+#bridge {padding : 20px; height : 100px; background-color : #1b1b1b;}
+#bridge >div > div {width : 100%; height : 100% ;}
+#bridge >div > div h3 {font-size : 24px; text-align : center; padding-top : 10px; color: #fff}
+#bridge >div > div h3 span{color : #bb090d}
+
+/* 인덱스 */
+#content {padding: 100px 0;}
+.chart_title {margin-bottom : 20px;}
+.chart_title h2{display: block; padding: 15px 0; font-size: 18px; color: #666; font-weight: 700;}
+.content_chart {overflow: hidden; margin-bottom : 60px;}
+.content_box {float: left; width: 250px; margin-right : 10px;}
+.content_box:last-child {margin-right: 0;}
+.content_box .poster {position: relative;}
+.content_box .poster img {display: block; padding-bottom:10px; width:100%; height : 350px;}
+.content_box .poster .rank {position: absolute; top: 17px; left: 0; width: 50px; height: 50px; font-size: 22px; box-shadow: 3px 3px 8px rgba(0,0,0,0.5); line-height: 50px; background-color: #38116a; text-align: center;}
+.content_box .poster .rank strong {color: #ffffff; text-shadow: 2px 2px 3px rgba(0,0,0,1);}
+.content_box .infor {background: #191C1E; padding: 5px;}
+.content_box .infor h3 {color: #ffffff; font-size: 14px; font-weight: 700; padding-bottom: 5px; margin-bottom: 5px; }
+.content_box .infor h3 a {color : #ffffff}
+.content_box .infor h3 strong{display : block; text-decoration : none; text-overflow : ellipsis; white-space:nowrap; overflow:hidden;}
+.content_box .infor h5 {color : #ffffff}
+.content_box .infor p {margin-bottom : 15px; color: #ffffff; font-size : 12px}
+.content_box .infor_btn {overflow: hidden;}
+.content_box .infor_btn a {float: left; width: 49%; margin-right: 2%; text-align: center; background: #f2f2f2; font-size: 18px; padding: 15px 0; box-sizing: border-box;}
+.content_box .infor_btn a:last-child {margin-right: 0;}
+
+
+/* 검색 결과 페이지 */
+#result {padding-bottom : 100px;}
+.status {padding:30px;}
+.status h3 {font-size : 16px;}
+.result_board {padding:50px; border-bottom :1px solid #333;}
+.value_content {padding : 5px 10px;; height : 250px; border-bottom: 1px solid #f2f2f2;}
+.value_content .poster {position: relative; display : block; float : left; margin-right : 15px; width : 150px; height:200px;}
+.value_content .info {position: relative; top:10px;}
+.value_content .info .title {font-size : 14px; margin:15px 0; color : #0000ff;}
+.value_content .info .title a {color : #0000ff;}
+.value_content .info p {margin : 5px 0;}
+.value_content .info .star {}
+.value_content .info .star em {font-size : 10px; color:#c0c0c0}
+.value_content .info h5 {display : block; text-decoration : none; text-overflow : ellipsis; white-space:nowrap; overflow:hidden;}
+
+
+/* 미디어쿼리 */
+@media (max-width: 1290px){
+.container {width: 100%;}
+.swiper-button-prev, .swiper-button-next {display: none;}
+}
+
+@media (max-width: 1024px){
+#mNav {display: block;}
+.nav {display: none;}
+.row {padding: 0 24px;}
+}
+
+@media (max-width: 960px){
+.slider {height: 500px;}
+.slider .swiper-slide h2 {margin-top: 170px; font-size: 37px; line-height: 45px;}
+.slider .swiper-slide h2:after {bottom: -15px;}
+.slider .swiper-slide h2 em {font-size: 34px;}
+.slider .swiper-slide p {font-size: 16px; padding-top: 35px;}
+    
+}
+
+@media (max-width: 768px){
+    
+.row {padding: 0 16px;}
+#mNav {right: 6px;}
+    
+}
+
+@media (max-width: 600px){
+.slider {height: 400px;}
+.slider .swiper-slide h2 {margin-top: 140px; font-size: 24px; line-height: 30px;}
+.slider .swiper-slide h2:after {bottom: -5px;}
+.slider .swiper-slide h2 em {font-size: 20px;}
+.slider .swiper-slide p {font-size: 14px; padding-top: 25px;}
+.swiper-pagination-bullet {width: 13px !important; height: 13px !important;}
+
+
+}
+
+@media (max-width: 480px){
+    
+}
+
+@media (max-width: 320px){
+}
+
+
+
+
+
+

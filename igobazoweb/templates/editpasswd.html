@@ -1,0 +1,46 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'style_member.css' %}">
+	<script src="{% static 'jquery-3.6.0.js'%}"></script>	
+	<script src="{% static 'script_register.js' %}"></script>	
+    <title> 비밀번호 변경 </title>
+  </head>
+  <body>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+	
+	{% csrf_token %}
+	<form method="post"  action="editpasswdpro" onsubmit="return editpasswd()"> 	
+		<div class="container mt-5 mb-5">
+			<div class="row d-flex align-items-center justify-content-center">
+		        <div class="col-md-6">
+		            <div class="card px-5 py-5"> 
+		                <h5 class="mt-3"> 비밀번호 변형 </h5> 
+	                
+		                <div class="form-input"> <i class="fa fa-lock"></i> <input type="password" class="form-control" name="passwd1"placeholder="기존 비밀번호" > </div>
+		                <div class="form-input"> <i class="fa fa-lock"></i> <input type="password" class="form-control" name="passwd2"placeholder="새로운 비밀번호" > </div>
+		                <div class="form-input"> <i class="fa fa-lock"></i> <input type="password" class="form-control" name="passwd3"placeholder="비밀번호 재확인" > </div>
+		                
+		                 {% if msg %}
+							<h6 style="color:red;">{{ msg }}</h6>
+						{% endif %}
+		                
+		                <button class="btn btn-primary mt-4 signup" type="submit" >비밀번호 변경 </button>
+	    				
+	    				<div class="text-center mt-4"> <a href="userinfo" class="text-decoration-none"> 회원정보로 돌아가기 </a> </div>
+		                <div class="text-center mt-4"> <a href="index" class="text-decoration-none"> 메인으로 돌아가기 </a> </div>
+		            
+		        	</div>
+		    	</div>
+			</div>
+		</div>		
+	</form> 
+</body>
+</html>

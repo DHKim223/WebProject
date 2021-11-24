@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> 회원관리 </title>
+		<link rel="stylesheet" type="text/css" href="{% static 'style_member.css' %}">
+		<script src="{% static 'jquery-3.6.0.js' %}"></script>
+		<script src="{% static 'script_register.js' %}"></script>
+	</head>
+	<body>
+		<h2> 닉네임 중복확인 </h2>
+		{% if result == 0 %}
+			<table>
+				<tr>
+					<th style="width:300px"> <span>{{nickname}}</span>는 사용할 수 있습니다.</th>
+				</tr>
+				<tr>
+					<th>
+						확인을 누르세요. <input class="inputbutton" type="button" value="확인" onclick="setnick('{{nickname}}')">
+					</th>	
+				</tr>
+			</table>
+		{% endif %}		
+		{% if result == 1 %}
+			<form action="confirm">
+				<table>
+					<tr>
+						<th colspan="2"> <span>{{nickname}}</span>는 중복되는 닉네임입니다. </th>
+					</tr>
+					<tr>
+						<th>닉네임</th>
+						<td><input class="input" type="text" name="nickname"></td>
+					</tr>
+					<tr>
+						<th colspan="2">
+							<input class="inputbutton" type="button" value="확인" onclick="return nickcheck()">
+							<input class="inputbutton" type="button" value="취소" onclick="self.close()">
+						</th>
+					</tr>
+				</table>
+			</form>
+		{% endif %}	
+	</body>
+</html>
