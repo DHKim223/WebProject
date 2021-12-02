@@ -30,35 +30,249 @@
 		
 	                <h4 class="mt-3"> {{id}}님의 취향분석 </h4>
 	               	
-	               	<!--  
-	               	<section>평가수</section>-->
-	               	
-	               	<section> 
+	             
+	               	<br>
+	               	<!-------------------- 별점 ---------------------------->
+	               	<section> 	               	
 	               		<h5>내가 준 별점 </h5>
 		               	<div>
 		               		영화
+		               		<table>				
+								<tr>
+									<th style width="7%">영화 제목</th>
+									<th style width="25%">별점</th>								
+								</tr>
+								
+								<!--  구현할때 주석풀고 사용 -->
+								<!-- views에 ,,별점 준 영화목록 갯수 == count로 만들기 -->
+								{% if count == 0 %}	
+									<!-- 별점준 영화가 없는 경우 -->
+									<tr>
+										<td align="center" colspan="8"> 
+											별점을 남겨주세요
+										</td>
+									</tr>				
+								{% endif %}
+								{% if count > 0 %}
+									<!-- 별점준 영화가 있는 경우 -->
+									{% for dto in dtos %}	<!-- views에,, 별점준 영화이름, 별점을 dtos에 저장 -->
+										<tr>																		
+											<!-- 영화 제목 -->						
+											<td align="left">																														
+												<a  href="detailpage?contentCd={{movie.contentCd}}&media_type={{movie.media_type}}">
+														<!--{{ dto.제목 }}-->													
+												</a>	
+												
+											</td>										
+											<!-- 별점 -->
+											<td align="center"> 
+												<!-- {{ dto.별점}}-->
+											</td>																					
+										</tr>			
+									{% endfor %}
+								{% endif %}			
+							</table>							
 		               	</div>
+		               	
 		               	<div>
 		               		TV
+		               		<table>				
+								<tr>
+									<th style width="7%">프로그램 제목</th>
+									<th style width="25%">별점</th>								
+								</tr>
+								
+								<!--  구현할때 주석풀고 사용 -->
+								<!-- views에 ,,별점 준 영화목록 갯수 == count로 만들기 -->
+								{% if count == 0 %}	
+									<!-- 별점준 영화가 없는 경우 -->
+									<tr>
+										<td align="center" colspan="8"> 
+											별점을 남겨주세요
+										</td>
+									</tr>				
+								{% endif %}
+								{% if count > 0 %}
+									<!-- 별점준 영화가 있는 경우 -->
+									{% for dto in dtos %}	<!-- views에,, 별점준 영화이름, 별점을 dtos에 저장 -->
+										<tr>					
+																								
+											<!-- 영화 제목 -->						
+											<td align="left">																														
+												<a  href="detailpage?contentCd={{movie.contentCd}}&media_type={{movie.media_type}}">
+														<!--{{ dto.제목 }}-->
+														프로그램 제목
+												</a>	
+												
+											</td>										
+											<!-- 별점 -->
+											<td align="center"> 			
+												<!-- {{ dto.별점}}-->
+											</td>																					
+										</tr>			
+									{% endfor %}
+								{% endif %}			
+							</table>
 		               	</div>
 	               	</section>
 	               	
+	               	<br><br>               	
+	               	<!-------------------- 좋아요 ---------------------------->
 	               	<section> 
 	              		<h5> 내가 누른 좋아요</h5>	 
 	                	<div>
-		               		영화
+		               		
+		               		<table>				
+								<tr>
+									<th style width="7%">영화 제목</th>
+									<th style width="25%">   
+										{% if count == 0 %}	
+											<!-- 좋아유 누른 영화가 없는 경우 -->																						
+													좋아요를 눌러주세요															
+										{% endif %}
+										{% if count > 0 %}
+										<!-- 좋아요 누른 영화가 있는 경우 -->
+											{% for dto in dtoml %}	<!-- views에,, 좋아요 누른 영화이름 dtos에 저장 -->																																								
+												<a  href="detailpage?contentCd={{movie.contentCd}}&media_type={{movie.media_type}}">
+													<!--{{ dto.제목 }}-->													
+												</a>																																			
+											{% endfor %}
+										{% endif %}
+									</th>								
+								</tr>
+							</table>
 		               	</div>
-		               	<div>
-		               		TV
+		               	<br>
+		               	<div>		               		
+		               		<table>				
+								<tr>
+									<th style width="7%">프로그램 제목</th>
+									<th style width="25%">   
+										{% if count == 0 %}	
+											<!-- 좋아유 누른 TV가 없는 경우 -->																						
+													좋아요를 눌러주세요															
+										{% endif %}
+										{% if count > 0 %}
+										<!-- 좋아요 누른 TV가 있는 경우 -->
+											{% for dto in dtos %}	<!-- views에,, 좋아요 누른 TV이름 dtos에 저장 -->																																								
+												<a  href="detailpage?contentCd={{movie.contentCd}}&media_type={{movie.media_type}}">
+													<!--{{ dto.제목 }}-->													
+												</a>																																			
+											{% endfor %}
+										{% endif %}
+									</th>								
+								</tr>
+							</table>
 		               	</div> 
+		               	<br>
 		               	<div>
-		               		배우
+		               		
+		               		<table>				
+								<tr>
+									<th style width="7%">배우 이름</th>
+									<th style width="25%">   
+										{% if count == 0 %}	
+											<!-- 좋아유 누른 배우가 없는 경우 -->																						
+													좋아요를 눌러주세요															
+										{% endif %}
+										{% if count > 0 %}
+										<!-- 좋아요 누른 배우가 있는 경우 -->
+											{% for dto in dtos %}	<!-- views에,, 좋아요 누른 배우이름 dtos에 저장 -->																																								
+												<a href="필모페이지">
+													<!--{{ dto.제목 }}-->													
+												</a>																																			
+											{% endfor %}
+										{% endif %}
+									</th>								
+								</tr>
+							</table>
 		               	</div>             	
 	               	</section>
 	               	
+	               	<br><br>
+	               	<!-------------------- 리뷰 ---------------------------->
 	               	<section>  
 	               		<h5>공감누른 리뷰</h5>
-	               		
+	               		<div id="middle">
+							<div id="tb">				
+								<table id="tbc">
+					
+									<tr>
+											<th style width="7%">번 호</th>					
+											<th style width="21%">영 화</th>
+											<th style width="25%">제 목</th>
+											<!--  <th style width="10%">작성자</th>	-->				
+											<th style width="8%">별 점</th>
+											<th style width="10%">공 감</th>					
+											<th style width="10%">작성일</th>
+											<th style width="10%">조 회</th>
+									</tr>
+									{% if count == 0 %}
+										<!-- 글이 없는 경우 -->
+										<tr>
+											<td align="center" colspan="8"> 
+												리뷰가 없습니다. 리뷰를 남겨주세요.
+											</td>
+										</tr>				
+									{% endif %}
+									
+									{% if count > 0 %}
+										<!-- 글이 있는 경우 -->
+										{% for dto in dtox %}
+											<tr>
+											
+												<!-- 번호 -->
+												<td align="center"> 
+													{{number|sub:forloop.counter0}}
+												</td>
+												
+												<!-- 영화제목 -->
+												<td align="left">
+														<a class = "tbclk" href="detail?num={{dto.num}}&pagenum={{pagenum}}&number={{number|sub:forloop.counter0}}&movieCd={{movieCd}}">
+															{{dto.title}}
+														</a>						
+												</td>
+												<!-- 리뷰제목 -->						
+												<td align="left">						
+													{% if dto.readcount == -1 %}
+														{{ dto.subject }}
+													{% endif %}
+													{% if dto.readcount != -1 %}
+														<a class = "tbclk" href="detail?num={{dto.num}}&pagenum={{pagenum}}&number={{number|sub:forloop.counter0}}&movieCd={{movieCd}}">
+															{{ dto.subject }}
+														</a>	
+													{% endif %}
+												</td>
+												
+												<!-- 작성자 -->
+												<!--  
+												<td align="center"> 
+													{{ dto.writer }}
+												</td> -->
+												
+												<td align="center"><img src="{% static 'star.png'%}" width="20" height="20">&nbsp;&nbsp;{{dto.starpoint}}</td> <!-- 별점 -->
+												<td align="center"><img src="{% static 'popcorn.png'%}" width="20" height="20">&nbsp;&nbsp;{{dto.sympathy}}</td> <!-- 공감 -->			
+												<td align="center"> <!-- 작성일 -->
+													{{ dto.regdate|date:"Y-m-d"}}<br>
+													{{ dto.regdate|date:"H:i" }}
+												</td>													 
+												<td align="center"> <!-- 조회수  -->
+													{% if dto.readcount == -1 %}
+														{{0}}
+													{% endif %}
+													{% if dto.readcount != -1 %}
+														{{ dto.readcount }}
+													{% endif %}
+												</td>		
+												
+											</tr>			
+											{% endfor %}
+									{% endif %}		
+								</table>
+										
+							</div>
+							
+						</div>
 	               	</section>
 	               	
 	                

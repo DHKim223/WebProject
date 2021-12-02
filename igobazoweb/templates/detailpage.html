@@ -21,9 +21,13 @@
 	<script src="{% static 'script_register.js'%}"></script>	
 
     <script>
-      function addAlbum() {
+    function addAlbum() {
         alert('Adding...');
       }
+      
+      const drawStar = (target) => {
+            document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
+          }
     </script>
 
 
@@ -61,42 +65,81 @@
     
 		<div class="container1">
 			<div class="movieNm">
+			     {% if media_type == 'person' %}
+			     <h1>{{info.peopleNm}}</h1>
+			     {% endif %}
+			     {% if media_type != 'person' %}
 				<h1>{{info.contentNm}}<span>({{info.originalNm}})</span></h1>
+				 {% endif %}
 			</div>
 			<div class="detail_poster">
+			     {% if media_type == 'person' %}
+			     <img class="mainimage" alt="{{info.peopleNm}}" src="{{info.profile}}"/>
+			     {% endif %}
+			     {% if media_type != 'person' %}
 				<img class="mainimage" alt="{{info.contentNm}}" src="{{info.poster}}"/>
+				{% endif %}
 			</div>
 			<div class="rating-container1">
 				<div class="rating">
 					<div class="star-container1">
 						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" class="star-icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path></svg>
-						
 					</div>
+					{% if media_type != 'person' %}
+					<form  action="detailstarp">
+                        <input type="hidden" name="contentCd" value="{{contentCd}}">
+                        <input type="hidden" name="media_type" value="{{media_type}}">                  
+                        
+                        <div class="star-container1">
+                            <span class="star">
+                                ★★★★★           
+                                <span>★★★★★</span>
+                                <input type="range" oninput="drawStar(this)" value="{{dst.starpoint}}" step="1" min="0" max="10" name="starpoint">
+                            </span>                     
+                        </div>
+                        <br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;            
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;                  
+                        <button type="submit" class="btn btn-danger btn-lg">평가하기</button>
+                        <br>
+                        <br>&nbsp;
+                        %&nbsp;&nbsp;별점 평가는 한 번만 가능&nbsp;&nbsp;%<br>                                            
+                    </form>
+                    {% endif %}
 					<div class="rating-text">
-						{{info.rating}}
+						<!--별점출력-->
 					</div>
 					<!-- --------------------------------------------------------- -->
-				
+				    {% if not like %}
 					<div>	
-					
-						<form  action="addmvwishlist" >	<!--  -->	
-							<input type="hidden" name="contentCd" value="{{info.contentCd}}">
-							<input type="hidden" name="media_type" value="{{info.media_type}}">
-							
-							
-							<button type="submit" >보고싶어요</button>
+						<form action="addwishlist" >
+						     {% if media_type == 'person' %}
+						     <input type="hidden" name="peopleCd" value="{{peopleCd}}">
+						     {% endif %}
+						     {% if media_type != 'person' %}
+							<input type="hidden" name="contentCd" value="{{contentCd}}">
+							 {% endif %}
+							<input type="hidden" name="media_type" value="{{media_type}}">
+							<button type="submit" >관심있어요</button>
 						</form>	
 					</div>
-					
+					{% endif %}
+					{% if like %}
 					<div>		
-						
-						<form  action="rmmvwishlist">
-							<input type="hidden" name="contentCd" value="{{info.contentCd}}">
-							<input type="hidden" name="media_type" value="{{info.media_type}}">
-							<button type="submit">안볼래요</button>
+						<form action="rmwishlist">
+							{% if media_type == 'person' %}
+                             <input type="hidden" name="peopleCd" value="{{peopleCd}}">
+                            {% endif %}
+                            {% if media_type != 'person' %}
+                            <input type="hidden" name="contentCd" value="{{contentCd}}">
+                            {% endif %}
+							<input type="hidden" name="media_type" value="{{media_type}}">
+							<button type="submit">관심없어요</button>
 						</form>
 					</div>
-				
+				    {% endif %}
 				
 				<!--   ------------------------------------------------------   -->
 					
@@ -104,6 +147,7 @@
 					
 				</div>
 			</div>	
+			{% if media_type == 'movie' %}
 			<div class="title">
 				<div class="red-line"></div>
 				<div class="title-text">OVERVIEW</div>
@@ -115,7 +159,6 @@
 				<div class="red-line"></div>
 				<div class="title-text">INFO</div>
 			</div>
-			
 			<table>
 			  <tr>
 			  	<td>개봉일</td>
@@ -124,27 +167,87 @@
 			  <tr>
 			    <td>장르</td>
 			    <td>{{info.genre}}</td>
-			   
 			  </tr>
 			  <tr>
 			    <td>러닝타임</td>
 			    <td>{{info.runtime}} 분</td>
-			    
 			  </tr>
 			  <tr>
-			    <td>제작</td>
-			    <td>{{info.company}}</td>
-			   
-			  </tr><tr>
-			    <td>감독</td>
-			    <td>{{info.director}}</td>
-			   
-			  </tr><tr>
-			    <td>주연</td>
-			    <td>{{info.actor}}</td>
-			   
+			    <td>제작진</td>
+			    <td></td>
+			  </tr>
+			  <tr>
+			    <td>출연진</td>
+			    <td></td>
 			  </tr>
 			</table>
+			{% endif %}
+			
+			{% if media_type == 'tv' %}
+			<div class="title">
+                <div class="red-line"></div>
+                <div class="title-text">OVERVIEW</div>
+            </div>
+            <div class="overview">
+                {{info.overview}}
+            </div>
+            <div class="title">
+                <div class="red-line"></div>
+                <div class="title-text">INFO</div>
+            </div>
+			<table>
+              <tr>
+                <td>방영일</td>
+                <td>{{info.release_date}}</td>
+              </tr>
+              <tr>
+                <td>장르</td>
+                <td>{{info.genre}}</td>
+              </tr>
+              <tr>
+                <td>시즌</td>
+                <td>{{info.number_of_seasons}} 시즌</td>
+              </tr>
+              <tr>
+                <td>에피소드</td>
+                <td>{{info.number_of_episodes}} 회</td>
+              </tr>
+              <tr>
+                <td>제작진</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>출연진</td>
+                <td></td>
+              </tr>
+            </table>
+			{% endif %}
+			
+			{% if media_type == 'person' %}
+			<div class="title">
+                <div class="red-line"></div>
+                <div class="title-text">이름</div>
+            </div>
+            <div class="overview">
+                {{info.peopleNm}}
+            </div>
+            <div class="title">
+                <div class="red-line"></div>
+                <div class="title-text">INFO</div>
+            </div>
+            <table>
+              <tr>
+                <td>생년월일</td>
+                <td>{{info.birthday}} ( {{info.birth_place}} )</td>
+              </tr>
+               
+              <tr>
+                <td>필모그래피</td>
+                <td></td>
+              </tr>
+              
+            </table>
+			{% endif %}
 			<!--  콘텐츠  -->
 			<div class="title">
 			<div class="red-line"></div>
@@ -310,7 +413,7 @@
 			<div id = "wr_wrap">
 					<!-- <a class="write" href="writepro" target="_self">글쓰기</a> -->
 					<!--  <a href="reviewwrite&movieCd={{movieCd}}&title={{data.movieNm}}" class="btn btn-danger btn-lg" role="button"> -->
-					<a href="writeprohong?contentCd={{contentCd}}&media_type={{media_type}}" role="button"> 
+					<a href="writeprohong?contentCd={{info.contentCd}}&media_type={{media_type}}" role="button"> 
 					<!--  <a href="writeprohong" class="btn btn-danger btn-lg" role="button"> -->
 					&nbsp;&nbsp;&nbsp;&nbsp;리뷰 남기기&nbsp;&nbsp;&nbsp;&nbsp;
 					</a>

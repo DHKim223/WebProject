@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 import logging
 from django.template import loader
 from django.http.response import HttpResponse
-from igobazoweb.models import Review, Member, Album
+from igobazoweb.models import Review, Member, Album, ReviewSymp, DetailStar,\
+    Movie, Tv
 from IGOBAZO.settings import PAGE_SIZE, PAGE_BLOCK
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.dateformat import DateFormat
@@ -10,6 +11,7 @@ from datetime import datetime
 from django.core.files.storage import FileSystemStorage
 import random
 import os
+from igobazoweb.tmdb import getDetail
 
 logger = logging.getLogger(__name__)
 # Create your views here.
@@ -91,34 +93,35 @@ def detail( request ) :
         }
     return HttpResponse( template.render( context, request ) )
 
-# 공감 누르기
-@csrf_exempt
-def detailsymp( request ):
-    if request.method == "POST" :
-        num = request.POST["num"]
-        sympathystr = request.POST["sympathy"]
-
-        sympathy = int(sympathystr)
-
-        sympathy +=1
-
-        dto = Review.objects.get( num = num )
-        dto.sympathy = sympathy
-        dto.save()
-    return redirect( "index" )   
+# # 공감 누르기
+# @csrf_exempt
+# def detailsymp( request ):
+#     if request.method == "POST" :
+#         num = request.POST["num"]
+#         sympathystr = request.POST["sympathy"]
+#
+#         sympathy = int(sympathystr)
+#
+#         sympathy +=1
+#
+#         dto = Review.objects.get( num = num )
+#         dto.sympathy = sympathy
+#         dto.save()
+#     return redirect( "index" )   
 
 
 
 @csrf_exempt
 def writeprohong(request):
     id = request.session.get('id')
-    media_type = request.GET.get("media_type")
-    contentCd = request.GET.get("contentCd")
-    title = request.GET.get('title')
     dto = Member.objects.get(id=id)
     nickname = dto.nickname
     
     if request.method == "GET" :
+        media_type = request.GET.get("media_type")
+        contentCd = request.GET.get("contentCd")
+        content = getDetail(media_type, contentCd)
+        title = content['contentNm']
         ref = 1                             # 그룹화 아이디
         #restep = 0                          # 글순서
         #relevel = 0                         # 글레벨
@@ -164,8 +167,8 @@ def writeprohong(request):
         dto = Review(
             num = num,
             writer = request.POST["writer"],
-            media_type = request.POST.get("media_type"),
-            contentCd = request.POST.get("contentCd"),
+            media_type = request.POST["media_type"],
+            contentCd = request.POST["contentCd"],
             title = request.POST["title"],
             subject = request.POST["subject"],
             passwd2 = request.POST["passwd2"],
@@ -335,7 +338,7 @@ def album_insert(request):
     fs = FileSystemStorage(location='igobazoweb/static/board/photos')
 
     name = fs.save(name_new + name_ext, uploaded_file)
-    Album.objects.create(subject=atitle, regdate=name_date, note=anote, image=name, writer=nickname, contentCd=contentCd, usage='1') # DB 저장
+    Album.objects.create(media_type= media_type, subject=atitle, regdate=name_date, note=anote, image=name, writer=nickname, contentCd=contentCd, usage='1') # DB 저장
       
     return redirect('index')
 
@@ -405,3 +408,51 @@ def album_delete(request):
     album.save()
 
     return redirect('index')
+
+@csrf_exempt
+def reviewsymp( request ): 
+    id = request.session.get('id')
+        
+    reviewnum = request.GET.get("num")
+    sympathystr = request.GET.get("sympathy")
+    
+    contentCd = request.GET.get("contentCd")
+    media_type = request.GET.get("media_type")
+
+    rsp = ReviewSymp.objects.filter(id=id).filter(reviewnum=reviewnum)
+    if rsp.exists() :
+        print("아이디 있음")
+        
+    else :     
+        rstb = ReviewSymp.objects.create(id=id, contentCd=contentCd, \
+                                         media_type=media_type,\
+                                         reviewnum=reviewnum)   
+        
+        sympathy = int(sympathystr)
+        sympathy +=1
+
+        dto = Review.objects.get( num = reviewnum )
+        dto.sympathy = sympathy
+        dto.save()
+    
+    return redirect( "index" )
+
+@csrf_exempt
+def detailstarp(request):
+    id = request.session.get('id')
+    
+    media_type = request.GET.get("media_type")
+    contentCd = request.GET.get("contentCd") 
+    starpoint = request.GET.get("starpoint")
+    stpint = int(starpoint)
+    starpoint2 = stpint / 2;  
+    
+    dst = DetailStar.objects.filter(id=id).filter(contentCd=contentCd)
+    if dst.exists() :
+        print("아이디 있음", dst)
+    else :  
+        dstb = DetailStar.objects.create(id=id, contentCd=contentCd, \
+                                         media_type=media_type,\
+                                         starpoint=starpoint2)         
+            
+    return redirect( "index" )

@@ -27,18 +27,18 @@
                         <tr>
                             <td width="20%" align="center">제목</td>
                             <td width="80%" align="left">
-                                {{ i.a_title }}
+                                {{ i.subject }}
                             </td>
                         </tr>
                         <tr>
                             <td width="20%" align="center">이미지</td>
                             <td width="80%" align="left" style="padding:10px 0;">
-                            <img src="{% static 'board/photos/' %}{{ i.a_image }}" class="img-fluid" alt="" style="width:50%;">
+                            <img src="{% static 'board/photos/' %}{{ i.image }}" class="img-fluid" alt="" style="width:50%;">
                             </td>
                         </tr>
                         <tr>
                             <td width="20%" align="center">내용</td>
-                            <td width="80%" align="left">{{ i.a_note }}</td>
+                            <td width="80%" align="left">{{ i.note }}</td>
                         </tr>
                         <tr>
                             <td width="100%" colspan="2">

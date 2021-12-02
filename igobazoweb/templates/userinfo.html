@@ -105,7 +105,7 @@
 											
 											<!-- 영화제목 -->
 											<td align="left">
-													<a class = "tbclk" href="detail?num={{dto.num}}&pagenum={{pagenum}}&number={{number|sub:forloop.counter0}}&movieCd={{movieCd}}">
+													<a class = "tbclk" href="detail?num={{dto.num}}&pagenum={{pagenum}}&number={{number|sub:forloop.counter0}}&movieCd={{dto.movieCd}}">
 														{{dto.title}}
 													</a>						
 											</td>
@@ -115,7 +115,7 @@
 													{{ dto.subject }}
 												{% endif %}
 												{% if dto.readcount != -1 %}
-													<a class = "tbclk" href="detail?num={{dto.num}}&pagenum={{pagenum}}&number={{number|sub:forloop.counter0}}&movieCd={{movieCd}}">
+													<a class = "tbclk" href="detail?num={{dto.num}}&pagenum={{pagenum}}&number={{number|sub:forloop.counter0}}&movieCd={{dto.movieCd}}">
 														{{ dto.subject }}
 													</a>	
 												{% endif %}

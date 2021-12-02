@@ -13340,10 +13340,223 @@ Traceback (most recent call last):
     raise IntegrityError(*tuple(e.args))
 django.db.utils.IntegrityError: (1048, "Column 'media_type' cannot be null")
 [2021-11-18 16:53:40] ERROR [django.server:161] "POST /igobazoweb/writeprohong HTTP/1.1" 500 151608
-[2021-11-19 09:43:51] WARNING [django.request:224] Not Found: /favicon.ico
-[2021-11-19 09:43:51] WARNING [django.request:224] Not Found: /favicon.ico
-[2021-11-19 09:43:51] WARNING [django.server:161] "GET /favicon.ico HTTP/1.1" 404 2222
-[2021-11-19 09:43:58] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+[2021-11-22 20:37:11] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-11-22 20:37:11] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-11-22 20:37:11] WARNING [django.server:161] "GET /favicon.ico HTTP/1.1" 404 2222
+[2021-11-29 18:03:39] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-11-29 18:03:39] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-11-29 18:03:39] WARNING [django.server:161] "GET /favicon.ico HTTP/1.1" 404 2222
+[2021-11-29 18:03:42] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 103, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-11-29 18:03:42] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 103, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-11-29 18:03:42] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd==&media_type=tv HTTP/1.1" 500 77409
+[2021-11-29 18:06:23] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 103, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 731, in getDetail
+    if data['id']:
+KeyError: 'id'
+[2021-11-29 18:06:23] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 103, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 731, in getDetail
+    if data['id']:
+KeyError: 'id'
+[2021-11-29 18:06:23] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd=&media_type=person HTTP/1.1" 500 71822
+[2021-11-29 18:06:54] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 103, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-11-29 18:06:54] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 103, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-11-29 18:06:54] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd==&media_type=tv HTTP/1.1" 500 77409
+[2021-11-29 18:14:41] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 103, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 494, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-11-29 18:14:41] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 103, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 494, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-11-29 18:14:41] ERROR [django.server:161] "GET /igobazoweb/detailpage?peopleCd=115290&media_type=person HTTP/1.1" 500 69655
+[2021-11-30 20:27:52] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-11-30 20:27:52] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-11-30 20:27:52] WARNING [django.server:161] "GET /favicon.ico HTTP/1.1" 404 2222
+[2021-11-30 20:27:56] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 181, in detailpage
+    orginalNm = info['orginalNm'],
+KeyError: 'orginalNm'
+[2021-11-30 20:27:56] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 181, in detailpage
+    orginalNm = info['orginalNm'],
+KeyError: 'orginalNm'
+[2021-11-30 20:27:56] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd=580489&media_type=movie HTTP/1.1" 500 71537
+[2021-11-30 20:29:50] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 177, in detailpage
+    Movie.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 451, in create
+    obj = self.model(**kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Movie() got an unexpected keyword argument 'orginalNm'
+[2021-11-30 20:29:50] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 177, in detailpage
+    Movie.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 451, in create
+    obj = self.model(**kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: Movie() got an unexpected keyword argument 'orginalNm'
+[2021-11-30 20:29:50] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd=580489&media_type=movie HTTP/1.1" 500 89876
+[2021-11-30 20:30:27] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 224, in detailpage
+    if not ctCrew.objects.filter(contentCd = contentCd).filter(peopleCd = cast[i]['actorCd'])\
+AttributeError: 'QuerySet' object has no attribute 'flter'
+[2021-11-30 20:30:27] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 224, in detailpage
+    if not ctCrew.objects.filter(contentCd = contentCd).filter(peopleCd = cast[i]['actorCd'])\
+AttributeError: 'QuerySet' object has no attribute 'flter'
+[2021-11-30 20:30:27] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd=568124&media_type=movie HTTP/1.1" 500 80723
+[2021-11-30 20:31:14] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 224, in detailpage
+    if not ctCrew.objects.filter(contentCd = contentCd).filter(peopleCd = cast[i]['actorCd'])\
+IndexError: list index out of range
+[2021-11-30 20:31:14] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 224, in detailpage
+    if not ctCrew.objects.filter(contentCd = contentCd).filter(peopleCd = cast[i]['actorCd'])\
+IndexError: list index out of range
+[2021-11-30 20:31:14] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd=370172&media_type=movie HTTP/1.1" 500 84505
+[2021-11-30 20:35:01] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 349, in detailpage
+    if not ctCountry.objects.filter(country = country[i]):
+IndexError: list index out of range
+[2021-11-30 20:35:01] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 349, in detailpage
+    if not ctCountry.objects.filter(country = country[i]):
+IndexError: list index out of range
+[2021-11-30 20:35:01] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd=580489&media_type=movie HTTP/1.1" 500 85065
+[2021-11-30 20:36:11] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
 Traceback (most recent call last):
   File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
     return self.cursor.execute(sql, params)
@@ -13355,7 +13568,7 @@ Traceback (most recent call last):
     db.query(q)
   File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
     _mysql.connection.query(self, query)
-MySQLdb._exceptions.ProgrammingError: (1146, "Table 'igoba.igobazoweb_album' doesn't exist")
+MySQLdb._exceptions.IntegrityError: (1062, "Duplicate entry '580489' for key 'igobazoweb_movie.contentCd'")
 
 The above exception was the direct cause of the following exception:
 
@@ -13364,27 +13577,25 @@ Traceback (most recent call last):
     response = get_response(request)
   File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\BigData\Workspace\Igobazo_pro\igobazoweb\views_page.py", line 154, in detailpage
-    return HttpResponse(template.render(context,request))
-  File "C:\Python\lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-  File "C:\Python\lib\site-packages\django\template\base.py", line 170, in render
-    return self._render(context)
-  File "C:\Python\lib\site-packages\django\template\base.py", line 162, in _render
-    return self.nodelist.render(context)
-  File "C:\Python\lib\site-packages\django\template\base.py", line 938, in render
-    bit = node.render_annotated(context)
-  File "C:\Python\lib\site-packages\django\template\base.py", line 905, in render_annotated
-    return self.render(context)
-  File "C:\Python\lib\site-packages\django\template\defaulttags.py", line 168, in render
-    len_values = len(values)
-  File "C:\Python\lib\site-packages\django\db\models\query.py", line 262, in __len__
-    self._fetch_all()
-  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
-    self._result_cache = list(self._iterable_class(self))
-  File "C:\Python\lib\site-packages\django\db\models\query.py", line 51, in __iter__
-    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
-  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1175, in execute_sql
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 177, in detailpage
+    Movie.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
     cursor.execute(sql, params)
   File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
     return super().execute(sql, params)
@@ -13406,8 +13617,8 @@ Traceback (most recent call last):
     db.query(q)
   File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
     _mysql.connection.query(self, query)
-django.db.utils.ProgrammingError: (1146, "Table 'igoba.igobazoweb_album' doesn't exist")
-[2021-11-19 09:43:58] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+django.db.utils.IntegrityError: (1062, "Duplicate entry '580489' for key 'igobazoweb_movie.contentCd'")
+[2021-11-30 20:36:11] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
 Traceback (most recent call last):
   File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
     return self.cursor.execute(sql, params)
@@ -13419,7 +13630,7 @@ Traceback (most recent call last):
     db.query(q)
   File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
     _mysql.connection.query(self, query)
-MySQLdb._exceptions.ProgrammingError: (1146, "Table 'igoba.igobazoweb_album' doesn't exist")
+MySQLdb._exceptions.IntegrityError: (1062, "Duplicate entry '580489' for key 'igobazoweb_movie.contentCd'")
 
 The above exception was the direct cause of the following exception:
 
@@ -13428,27 +13639,25 @@ Traceback (most recent call last):
     response = get_response(request)
   File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\BigData\Workspace\Igobazo_pro\igobazoweb\views_page.py", line 154, in detailpage
-    return HttpResponse(template.render(context,request))
-  File "C:\Python\lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-  File "C:\Python\lib\site-packages\django\template\base.py", line 170, in render
-    return self._render(context)
-  File "C:\Python\lib\site-packages\django\template\base.py", line 162, in _render
-    return self.nodelist.render(context)
-  File "C:\Python\lib\site-packages\django\template\base.py", line 938, in render
-    bit = node.render_annotated(context)
-  File "C:\Python\lib\site-packages\django\template\base.py", line 905, in render_annotated
-    return self.render(context)
-  File "C:\Python\lib\site-packages\django\template\defaulttags.py", line 168, in render
-    len_values = len(values)
-  File "C:\Python\lib\site-packages\django\db\models\query.py", line 262, in __len__
-    self._fetch_all()
-  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
-    self._result_cache = list(self._iterable_class(self))
-  File "C:\Python\lib\site-packages\django\db\models\query.py", line 51, in __iter__
-    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
-  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1175, in execute_sql
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 177, in detailpage
+    Movie.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
     cursor.execute(sql, params)
   File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
     return super().execute(sql, params)
@@ -13470,9 +13679,475 @@ Traceback (most recent call last):
     db.query(q)
   File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
     _mysql.connection.query(self, query)
-django.db.utils.ProgrammingError: (1146, "Table 'igoba.igobazoweb_album' doesn't exist")
-[2021-11-19 09:43:58] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd=566525&media_type=movie HTTP/1.1" 500 201994
-[2021-11-19 09:58:02] ERROR [django.request:224] Internal Server Error: /igobazoweb/registers
+django.db.utils.IntegrityError: (1062, "Duplicate entry '580489' for key 'igobazoweb_movie.contentCd'")
+[2021-11-30 20:36:11] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd=580489&media_type=movie HTTP/1.1" 500 241600
+[2021-11-30 20:44:31] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 359, in detailpage
+    if not ctCountry.objects.filter(country = country[i]):
+IndexError: list index out of range
+[2021-11-30 20:44:31] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 359, in detailpage
+    if not ctCountry.objects.filter(country = country[i]):
+IndexError: list index out of range
+[2021-11-30 20:44:31] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd=580489&media_type=movie HTTP/1.1" 500 85065
+[2021-11-30 20:45:41] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 359, in detailpage
+    if not ctCountry.objects.filter(country = country[i]):
+IndexError: list index out of range
+[2021-11-30 20:45:41] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 359, in detailpage
+    if not ctCountry.objects.filter(country = country[i]):
+IndexError: list index out of range
+[2021-11-30 20:45:41] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd=580489&media_type=movie HTTP/1.1" 500 85057
+[2021-11-30 20:47:00] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 115, in detailpage
+    birth_place = info['birth_place'],
+KeyError: 'birth_place'
+[2021-11-30 20:47:00] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 115, in detailpage
+    birth_place = info['birth_place'],
+KeyError: 'birth_place'
+[2021-11-30 20:47:00] ERROR [django.server:161] "GET /igobazoweb/detailpage?peopleCd=73249&media_type=person HTTP/1.1" 500 71697
+[2021-11-30 20:47:52] WARNING [django.request:224] Not Found: /s3Sv4bZORQ5DuZJahgU2X0RgMUQ.jpg
+[2021-11-30 20:47:52] WARNING [django.request:224] Not Found: /s3Sv4bZORQ5DuZJahgU2X0RgMUQ.jpg
+[2021-11-30 20:47:52] WARNING [django.server:161] "GET /s3Sv4bZORQ5DuZJahgU2X0RgMUQ.jpg HTTP/1.1" 404 2282
+[2021-11-30 20:54:32] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 164, in detailpage
+    template = loader.get_template("detailpagepeople.html")
+  File "C:\Python\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Python\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 445, in parse
+    raise self.error(token, 'Empty variable tag on line %d' % token.lineno)
+django.template.exceptions.TemplateSyntaxError: Empty variable tag on line 73
+[2021-11-30 20:54:32] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 164, in detailpage
+    template = loader.get_template("detailpagepeople.html")
+  File "C:\Python\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Python\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 445, in parse
+    raise self.error(token, 'Empty variable tag on line %d' % token.lineno)
+django.template.exceptions.TemplateSyntaxError: Empty variable tag on line 73
+[2021-11-30 20:54:32] ERROR [django.server:161] "GET /igobazoweb/detailpage?peopleCd=25002&media_type=person HTTP/1.1" 500 136525
+[2021-11-30 20:55:31] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 164, in detailpage
+    template = loader.get_template("detailpagepeople.html")
+  File "C:\Python\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Python\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 445, in parse
+    raise self.error(token, 'Empty variable tag on line %d' % token.lineno)
+django.template.exceptions.TemplateSyntaxError: Empty variable tag on line 73
+[2021-11-30 20:55:31] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 164, in detailpage
+    template = loader.get_template("detailpagepeople.html")
+  File "C:\Python\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Python\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 445, in parse
+    raise self.error(token, 'Empty variable tag on line %d' % token.lineno)
+django.template.exceptions.TemplateSyntaxError: Empty variable tag on line 73
+[2021-11-30 20:55:31] ERROR [django.server:161] "GET /igobazoweb/detailpage?peopleCd=25002&media_type=person HTTP/1.1" 500 136553
+[2021-11-30 20:56:10] WARNING [django.request:224] Not Found: /pY4pwYO8qwtzvuzpzRczDACDiVA.jpg
+[2021-11-30 20:56:10] WARNING [django.request:224] Not Found: /pY4pwYO8qwtzvuzpzRczDACDiVA.jpg
+[2021-11-30 20:56:10] WARNING [django.server:161] "GET /pY4pwYO8qwtzvuzpzRczDACDiVA.jpg HTTP/1.1" 404 2282
+[2021-11-30 20:56:32] WARNING [django.request:224] Not Found: /pY4pwYO8qwtzvuzpzRczDACDiVA.jpg
+[2021-11-30 20:56:32] WARNING [django.request:224] Not Found: /pY4pwYO8qwtzvuzpzRczDACDiVA.jpg
+[2021-11-30 20:56:32] WARNING [django.server:161] "GET /pY4pwYO8qwtzvuzpzRczDACDiVA.jpg HTTP/1.1" 404 2282
+[2021-12-01 19:33:13] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-12-01 19:33:13] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-12-01 19:33:13] WARNING [django.server:161] "GET /favicon.ico HTTP/1.1" 404 2222
+[2021-12-01 19:33:27] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 181, in detailpage
+    template = loader.get_template("detailpagemovie.html")
+  File "C:\Python\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Python\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 449, in parse
+    raise self.error(token, e)
+  File "C:\Python\lib\site-packages\django\template\base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Python\lib\site-packages\django\template\base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python\lib\site-packages\django\template\base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% if not like %' from '% if not like %'
+[2021-12-01 19:33:27] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 181, in detailpage
+    template = loader.get_template("detailpagemovie.html")
+  File "C:\Python\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Python\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Python\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\Python\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "C:\Python\lib\site-packages\django\template\base.py", line 449, in parse
+    raise self.error(token, e)
+  File "C:\Python\lib\site-packages\django\template\base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Python\lib\site-packages\django\template\base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python\lib\site-packages\django\template\base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% if not like %' from '% if not like %'
+[2021-12-01 19:33:27] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd=634649&media_type=movie HTTP/1.1" 500 147894
+[2021-12-01 19:38:17] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailstarp
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'id' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 451, in detailstarp
+    dstb = DetailStar.objects.create(id=id, contentCd=contentCd, \
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'id' cannot be null")
+[2021-12-01 19:38:17] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailstarp
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'id' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 451, in detailstarp
+    dstb = DetailStar.objects.create(id=id, contentCd=contentCd, \
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'id' cannot be null")
+[2021-12-01 19:38:17] ERROR [django.server:161] "GET /igobazoweb/detailstarp?contentCd=580489&media_type=movie&starpoint=10 HTTP/1.1" 500 154595
+[2021-12-01 19:39:30] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 177, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-01 19:39:30] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 177, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-01 19:39:30] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd==93405&media_type=tv HTTP/1.1" 500 77718
+[2021-12-01 19:46:38] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 184, in detailpage
+    Movie.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1415, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1358, in as_sql
+    value_rows = [
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1359, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1359, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1300, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Python\lib\site-packages\django\db\models\fields\__init__.py", line 842, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python\lib\site-packages\django\db\models\fields\__init__.py", line 837, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'runtime' expected a number but got ''.
+[2021-12-01 19:46:38] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 184, in detailpage
+    Movie.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1415, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1358, in as_sql
+    value_rows = [
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1359, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1359, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1300, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Python\lib\site-packages\django\db\models\fields\__init__.py", line 842, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Python\lib\site-packages\django\db\models\fields\__init__.py", line 837, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Python\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'runtime' expected a number but got ''.
+[2021-12-01 19:46:38] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd=634649&media_type=movie HTTP/1.1" 500 157807
+[2021-12-02 09:51:34] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-12-02 09:51:34] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-12-02 09:51:34] WARNING [django.server:161] "GET /favicon.ico HTTP/1.1" 404 2222
+[2021-12-02 09:51:40] ERROR [django.request:224] Internal Server Error: /igobazoweb/registers
 Traceback (most recent call last):
   File "C:\Python\lib\site-packages\django\utils\datastructures.py", line 76, in __getitem__
     list_ = super().__getitem__(key)
@@ -13487,12 +14162,12 @@ Traceback (most recent call last):
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
   File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
     return view_func(*args, **kwargs)
-  File "C:\BigData\Workspace\Igobazo_pro\igobazoweb\views.py", line 68, in registers
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views.py", line 69, in registers
     id = request.POST["id"]
   File "C:\Python\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
     raise MultiValueDictKeyError(key)
 django.utils.datastructures.MultiValueDictKeyError: 'id'
-[2021-11-19 09:58:02] ERROR [django.request:224] Internal Server Error: /igobazoweb/registers
+[2021-12-02 09:51:40] ERROR [django.request:224] Internal Server Error: /igobazoweb/registers
 Traceback (most recent call last):
   File "C:\Python\lib\site-packages\django\utils\datastructures.py", line 76, in __getitem__
     list_ = super().__getitem__(key)
@@ -13507,11 +14182,1271 @@ Traceback (most recent call last):
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
   File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
     return view_func(*args, **kwargs)
-  File "C:\BigData\Workspace\Igobazo_pro\igobazoweb\views.py", line 68, in registers
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views.py", line 69, in registers
     id = request.POST["id"]
   File "C:\Python\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
     raise MultiValueDictKeyError(key)
 django.utils.datastructures.MultiValueDictKeyError: 'id'
-[2021-11-22 09:43:54] WARNING [django.request:224] Not Found: /favicon.ico
-[2021-11-22 09:43:54] WARNING [django.request:224] Not Found: /favicon.ico
-[2021-11-22 09:43:54] WARNING [django.server:161] "GET /favicon.ico HTTP/1.1" 404 2222
+[2021-12-02 09:55:15] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'runtime' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 193, in detailpage
+    Movie.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'runtime' cannot be null")
+[2021-12-02 09:55:15] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'runtime' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 193, in detailpage
+    Movie.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'runtime' cannot be null")
+[2021-12-02 09:55:15] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd=634649&media_type=movie HTTP/1.1" 500 179437
+[2021-12-02 10:19:25] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 180, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-02 10:19:25] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 180, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-02 10:19:25] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd==93405&media_type=tv HTTP/1.1" 500 77505
+[2021-12-02 10:21:11] ERROR [django.request:224] Internal Server Error: /igobazoweb/album_insert
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 313, in album_insert
+    dto = Member.objects.get(id=id)
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 435, in get
+    raise self.model.DoesNotExist(
+igobazoweb.models.Member.DoesNotExist: Member matching query does not exist.
+[2021-12-02 10:21:11] ERROR [django.request:224] Internal Server Error: /igobazoweb/album_insert
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 313, in album_insert
+    dto = Member.objects.get(id=id)
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 435, in get
+    raise self.model.DoesNotExist(
+igobazoweb.models.Member.DoesNotExist: Member matching query does not exist.
+[2021-12-02 10:21:11] ERROR [django.server:161] "POST /igobazoweb/album_insert HTTP/1.1" 500 78492
+[2021-12-02 10:21:22] ERROR [django.request:224] Internal Server Error: /igobazoweb/registers
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\utils\datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views.py", line 69, in registers
+    id = request.POST["id"]
+  File "C:\Python\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'id'
+[2021-12-02 10:21:22] ERROR [django.request:224] Internal Server Error: /igobazoweb/registers
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\utils\datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views.py", line 69, in registers
+    id = request.POST["id"]
+  File "C:\Python\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'id'
+[2021-12-02 10:22:14] WARNING [django.server:161] "GET /static/board/photos/ HTTP/1.1" 404 1817
+[2021-12-02 10:22:16] WARNING [django.server:161] "GET /static/board/photos/ HTTP/1.1" 404 1817
+[2021-12-02 10:23:44] WARNING [django.server:161] "GET /static/board/photos/ HTTP/1.1" 404 1817
+[2021-12-02 10:56:50] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 180, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 510, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-02 10:56:50] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 180, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 510, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-02 10:56:50] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd==397567&media_type=movie HTTP/1.1" 500 77659
+[2021-12-02 10:56:59] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 180, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-02 10:56:59] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 180, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-02 10:56:59] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd==93405&media_type=tv HTTP/1.1" 500 77727
+[2021-12-02 10:57:04] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 180, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-02 10:57:04] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 180, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-02 10:57:04] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd==93405&media_type=tv HTTP/1.1" 500 77727
+[2021-12-02 10:58:47] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 180, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-02 10:58:47] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 180, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-02 10:58:47] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd==93405&media_type=tv HTTP/1.1" 500 77727
+[2021-12-02 10:59:39] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 180, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-02 10:59:39] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 180, in detailpage
+    info = tmdb.getDetail(media_type,contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 626, in getDetail
+    credit = getCredit(media_type, contentId)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 281, in getCredit
+    if datas['cast']:
+KeyError: 'cast'
+[2021-12-02 10:59:39] ERROR [django.server:161] "GET /igobazoweb/detailpage?contentCd==93405&media_type=tv HTTP/1.1" 500 77727
+[2021-12-02 11:38:56] ERROR [django.request:224] Internal Server Error: /igobazoweb/stat
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'a'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views.py", line 234, in stat
+    dtox = Review.objects.filter(num = id).order_by("-num")[start:end] #id 를 ReviewSymp에서 받아온 글번호들로,,,,
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Python\lib\site-packages\django\db\models\sql\query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python\lib\site-packages\django\db\models\sql\query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Python\lib\site-packages\django\db\models\sql\query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python\lib\site-packages\django\db\models\sql\query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Python\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python\lib\site-packages\django\db\models\lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "C:\Python\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'num' expected a number but got 'a'.
+[2021-12-02 11:38:56] ERROR [django.request:224] Internal Server Error: /igobazoweb/stat
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'a'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views.py", line 234, in stat
+    dtox = Review.objects.filter(num = id).order_by("-num")[start:end] #id 를 ReviewSymp에서 받아온 글번호들로,,,,
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Python\lib\site-packages\django\db\models\sql\query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Python\lib\site-packages\django\db\models\sql\query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Python\lib\site-packages\django\db\models\sql\query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python\lib\site-packages\django\db\models\sql\query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "C:\Python\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python\lib\site-packages\django\db\models\lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "C:\Python\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'num' expected a number but got 'a'.
+[2021-12-02 11:38:56] ERROR [django.server:161] "GET /igobazoweb/stat HTTP/1.1" 500 121961
+[2021-12-02 11:43:49] ERROR [django.request:224] Internal Server Error: /igobazoweb/stat
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views.py", line 212, in stat
+    rs = ReviewSymp.objects.get(id = id)
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 435, in get
+    raise self.model.DoesNotExist(
+igobazoweb.models.ReviewSymp.DoesNotExist: ReviewSymp matching query does not exist.
+[2021-12-02 11:43:49] ERROR [django.request:224] Internal Server Error: /igobazoweb/stat
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views.py", line 212, in stat
+    rs = ReviewSymp.objects.get(id = id)
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 435, in get
+    raise self.model.DoesNotExist(
+igobazoweb.models.ReviewSymp.DoesNotExist: ReviewSymp matching query does not exist.
+[2021-12-02 11:43:49] ERROR [django.server:161] "GET /igobazoweb/stat HTTP/1.1" 500 73206
+[2021-12-02 11:53:37] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailstarp
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'contentCd' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 452, in detailstarp
+    dstb = DetailStar.objects.create(id=id, contentCd=contentCd, \
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'contentCd' cannot be null")
+[2021-12-02 11:53:37] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailstarp
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'contentCd' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 452, in detailstarp
+    dstb = DetailStar.objects.create(id=id, contentCd=contentCd, \
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'contentCd' cannot be null")
+[2021-12-02 11:53:37] ERROR [django.server:161] "GET /igobazoweb/detailstarp?peopleCd=73249&media_type=person&starpoint=8 HTTP/1.1" 500 155070
+[2021-12-02 11:53:42] ERROR [django.request:224] Internal Server Error: /igobazoweb/addwishlist
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'peopleCd' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_like.py", line 19, in addwishlist
+    PeopleLike.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'peopleCd' cannot be null")
+[2021-12-02 11:53:42] ERROR [django.request:224] Internal Server Error: /igobazoweb/addwishlist
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'peopleCd' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_like.py", line 19, in addwishlist
+    PeopleLike.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'peopleCd' cannot be null")
+[2021-12-02 11:53:42] ERROR [django.server:161] "GET /igobazoweb/addwishlist?contentCd=&media_type=person HTTP/1.1" 500 152705
+[2021-12-02 11:56:32] ERROR [django.request:224] Internal Server Error: /igobazoweb/addwishlist
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'peopleCd' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_like.py", line 19, in addwishlist
+    PeopleLike.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'peopleCd' cannot be null")
+[2021-12-02 11:56:32] ERROR [django.request:224] Internal Server Error: /igobazoweb/addwishlist
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'peopleCd' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_like.py", line 19, in addwishlist
+    PeopleLike.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'peopleCd' cannot be null")
+[2021-12-02 11:56:32] ERROR [django.server:161] "GET /igobazoweb/addwishlist?contentCd=&media_type=person HTTP/1.1" 500 152705
+[2021-12-02 11:59:13] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    title = getDetail(media_type, contentCd)['contentNm']
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 494, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 11:59:13] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    title = getDetail(media_type, contentCd)['contentNm']
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 494, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 11:59:13] ERROR [django.server:161] "POST /igobazoweb/writeprohong HTTP/1.1" 500 74616
+[2021-12-02 12:00:56] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    title = getDetail(media_type, contentCd)['contentNm']
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 494, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:00:56] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    title = getDetail(media_type, contentCd)['contentNm']
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 494, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:00:56] ERROR [django.server:161] "POST /igobazoweb/writeprohong HTTP/1.1" 500 74612
+[2021-12-02 12:05:32] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    title = getDetail(contentCd, media_type)['contentNm']
+KeyError: 'contentNm'
+[2021-12-02 12:05:32] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    title = getDetail(contentCd, media_type)['contentNm']
+KeyError: 'contentNm'
+[2021-12-02 12:05:32] ERROR [django.server:161] "GET /igobazoweb/writeprohong?contentCd=580489&media_type=movie HTTP/1.1" 500 69211
+[2021-12-02 12:07:01] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    title = getDetail(media_type, contentCd)['contentNm']
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 495, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:07:01] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    title = getDetail(media_type, contentCd)['contentNm']
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 495, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:07:01] ERROR [django.server:161] "POST /igobazoweb/writeprohong HTTP/1.1" 500 74644
+[2021-12-02 12:07:33] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    title = getDetail(media_type, contentCd)['contentNm']
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 495, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:07:33] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    title = getDetail(media_type, contentCd)['contentNm']
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 495, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:07:33] ERROR [django.server:161] "POST /igobazoweb/writeprohong HTTP/1.1" 500 74646
+[2021-12-02 12:10:09] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    contentNm = getDetail(media_type, contentCd)['contentNm']
+KeyError: 'contentNm'
+[2021-12-02 12:10:09] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    contentNm = getDetail(media_type, contentCd)['contentNm']
+KeyError: 'contentNm'
+[2021-12-02 12:10:09] ERROR [django.server:161] "GET /igobazoweb/writeprohong?contentCd=580489&media_type= HTTP/1.1" 500 69139
+[2021-12-02 12:10:54] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    contentNm = getDetail(media_type, contentCd)['contentNm']
+KeyError: 'contentNm'
+[2021-12-02 12:10:54] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 118, in writeprohong
+    contentNm = getDetail(media_type, contentCd)['contentNm']
+KeyError: 'contentNm'
+[2021-12-02 12:10:54] ERROR [django.server:161] "GET /igobazoweb/writeprohong?contentCd=580489&media_type= HTTP/1.1" 500 69139
+[2021-12-02 12:16:33] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 121, in writeprohong
+    title = content.contentNm
+AttributeError: 'QuerySet' object has no attribute 'contentNm'
+[2021-12-02 12:16:33] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 121, in writeprohong
+    title = content.contentNm
+AttributeError: 'QuerySet' object has no attribute 'contentNm'
+[2021-12-02 12:16:33] ERROR [django.server:161] "GET /igobazoweb/writeprohong?contentCd=566525&media_type=movie HTTP/1.1" 500 69611
+[2021-12-02 12:19:45] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 125, in writeprohong
+    content = getDetail(media_type, contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 495, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:19:45] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 125, in writeprohong
+    content = getDetail(media_type, contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 495, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:19:45] ERROR [django.server:161] "POST /igobazoweb/writeprohong HTTP/1.1" 500 74696
+[2021-12-02 12:23:09] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 125, in writeprohong
+    content = getDetail(media_type, contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 495, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:23:09] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 125, in writeprohong
+    content = getDetail(media_type, contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 495, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:23:09] ERROR [django.server:161] "POST /igobazoweb/writeprohong HTTP/1.1" 500 74699
+[2021-12-02 12:25:47] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 125, in writeprohong
+    content = getDetail(media_type, contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 495, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:25:47] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 125, in writeprohong
+    content = getDetail(media_type, contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 495, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:25:47] ERROR [django.server:161] "POST /igobazoweb/writeprohong HTTP/1.1" 500 74407
+[2021-12-02 12:27:45] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 127, in writeprohong
+    content = getDetail(media_type, contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 495, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:27:45] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 127, in writeprohong
+    content = getDetail(media_type, contentCd)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\tmdb.py", line 495, in getDetail
+    url = "https://api.themoviedb.org/3/" + media_type + "/" + contentId + "?api_key=" + api_key + "&language=" + language
+TypeError: can only concatenate str (not "NoneType") to str
+[2021-12-02 12:27:45] ERROR [django.server:161] "POST /igobazoweb/writeprohong HTTP/1.1" 500 74392
+[2021-12-02 12:30:20] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 172, in writeprohong
+    title = title,
+UnboundLocalError: local variable 'title' referenced before assignment
+[2021-12-02 12:30:20] ERROR [django.request:224] Internal Server Error: /igobazoweb/writeprohong
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_review.py", line 172, in writeprohong
+    title = title,
+UnboundLocalError: local variable 'title' referenced before assignment
+[2021-12-02 12:30:20] ERROR [django.server:161] "POST /igobazoweb/writeprohong HTTP/1.1" 500 70866
+[2021-12-02 12:34:24] ERROR [django.request:224] Internal Server Error: /igobazoweb/stat
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views.py", line 212, in stat
+    rs = ReviewSymp.objects.get(id = id)
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 439, in get
+    raise self.model.MultipleObjectsReturned(
+igobazoweb.models.ReviewSymp.MultipleObjectsReturned: get() returned more than one ReviewSymp -- it returned 3!
+[2021-12-02 12:34:24] ERROR [django.request:224] Internal Server Error: /igobazoweb/stat
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views.py", line 212, in stat
+    rs = ReviewSymp.objects.get(id = id)
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 439, in get
+    raise self.model.MultipleObjectsReturned(
+igobazoweb.models.ReviewSymp.MultipleObjectsReturned: get() returned more than one ReviewSymp -- it returned 3!
+[2021-12-02 12:34:24] ERROR [django.server:161] "GET /igobazoweb/stat HTTP/1.1" 500 73496
+[2021-12-02 12:34:51] ERROR [django.request:224] Internal Server Error: /igobazoweb/stat
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views.py", line 236, in stat
+    dtox = Review.objects.filter(num = rs.num).order_by("-num")[start:end] #id 를 ReviewSymp에서 받아온 글번호들로,,,,
+AttributeError: 'QuerySet' object has no attribute 'num'
+[2021-12-02 12:34:51] ERROR [django.request:224] Internal Server Error: /igobazoweb/stat
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views.py", line 236, in stat
+    dtox = Review.objects.filter(num = rs.num).order_by("-num")[start:end] #id 를 ReviewSymp에서 받아온 글번호들로,,,,
+AttributeError: 'QuerySet' object has no attribute 'num'
+[2021-12-02 12:34:51] ERROR [django.server:161] "GET /igobazoweb/stat HTTP/1.1" 500 66563
+[2021-12-02 12:40:32] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 120, in detailpage
+    homepage = info['homepage'],
+KeyError: 'homepage'
+[2021-12-02 12:40:32] ERROR [django.request:224] Internal Server Error: /igobazoweb/detailpage
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_page.py", line 120, in detailpage
+    homepage = info['homepage'],
+KeyError: 'homepage'
+[2021-12-02 12:40:32] ERROR [django.server:161] "GET /igobazoweb/detailpage?peopleCd=115290&media_type=person HTTP/1.1" 500 72097
+[2021-12-02 12:40:58] ERROR [django.request:224] Internal Server Error: /igobazoweb/addwishlist
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'peopleCd' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_like.py", line 19, in addwishlist
+    PeopleLike.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'peopleCd' cannot be null")
+[2021-12-02 12:40:58] ERROR [django.request:224] Internal Server Error: /igobazoweb/addwishlist
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Python\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Python\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'peopleCd' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\BigData\Workspace\Igobazo_pro2\igobazoweb\views_like.py", line 19, in addwishlist
+    PeopleLike.objects.create(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Python\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'peopleCd' cannot be null")
+[2021-12-02 12:40:58] ERROR [django.server:161] "GET /igobazoweb/addwishlist?contentCd=&media_type=person HTTP/1.1" 500 152705
+[2021-12-02 12:55:27] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-12-02 12:55:27] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-12-02 12:55:27] WARNING [django.server:161] "GET /favicon.ico HTTP/1.1" 404 2222
+[2021-12-02 15:48:17] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-12-02 15:48:17] WARNING [django.request:224] Not Found: /favicon.ico
+[2021-12-02 15:48:17] WARNING [django.server:161] "GET /favicon.ico HTTP/1.1" 404 2222

@@ -3,10 +3,12 @@ import logging
 from django.http.response import HttpResponse
 from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
-from igobazoweb.models import Member
+from igobazoweb.models import Member, Review, MovieLike, TvLike, PeopleLike,\
+    ReviewSymp
 from django.utils.dateformat import DateFormat
 from datetime import datetime
 from django.core.exceptions import ObjectDoesNotExist
+from IGOBAZO.settings import PAGE_BLOCK, PAGE_SIZE
 
 logger = logging.getLogger(__name__)
 # Create your views here.
@@ -148,7 +150,36 @@ def logout(request):
 @csrf_exempt
 def userinfo(request):
     id = request.session.get("id")
-    dto = Member.objects.get( id = id )   
+    dto = Member.objects.get( id = id ) 
+    
+    count = Review.objects.all().count()
+    
+    pagenum = request.GET.get("pagenum")
+    if not pagenum :
+        pagenum = "1"
+    pagenum = int( pagenum )
+    
+    start = ( pagenum - 1) * int(PAGE_SIZE)
+    end = start + int (PAGE_SIZE)
+    
+    if end > count :
+        end = count
+    dtox = Review.objects.filter(writer = dto.nickname).order_by("-num")[start:end]
+    number = count - (pagenum-1)*int(PAGE_SIZE)                     # 50 - (2-1) * 5
+    
+    startpage = pagenum // PAGE_BLOCK * PAGE_BLOCK + 1      # (보고싶은 페이지)/5 * 5 + 1
+    if pagenum % PAGE_BLOCK == 0 :                                      # 엔드페이지에도 영향이 가게 앞서서 위치 잡아줘야함
+        startpage -= PAGE_BLOCK
+    endpage = startpage + PAGE_BLOCK - 1
+    pagecount = count //PAGE_SIZE
+    
+    if count % PAGE_SIZE > 0 :
+        pagecount += 1
+    if endpage > pagecount :
+        endpage = pagecount
+    
+    pages = range(startpage, endpage + 1)
+    
     pg = [dto.pg_romance, dto.pg_thriller, dto.pg_horror, dto.pg_noir, dto.pg_action, dto.pg_sf, dto.pg_fantasy, dto.pg_teen, dto.pg_anime, dto.pg_history, dto.pg_sports, dto.pg_music, dto.pg_comedy, dto.pg_war]
     pgens = ["romance", "thriller", "horror", "noir", "action", "sf", "fantasy", "teen", "anime", "history","sports","music","comedy","war" ]
     pgen = []
@@ -158,13 +189,87 @@ def userinfo(request):
             pgen.append(pgens[i])
     
     template = loader.get_template("userinfo.html")
-        
+    
+    
     context={
         "id":id,       
         "dto":dto,
         "pgen":pgen,
+        "dtox":dtox,
+        "count" : count,
+        "pagenum" : pagenum,
+        "number" : number,
+        "startpage" : startpage,
+        "endpage" : endpage,
+        "pageblock" : PAGE_BLOCK,
+        "pagecount" : pagecount,
+        "pages" : pages,
         }
     return HttpResponse(template.render(context,request))
+
+def stat(request):
+    id = request.session.get('id')
+    
+    #####별점######
+    #####별점######
+    
+    #####좋아요######
+    dtoml = MovieLike.objects.filter(id = id)
+    dtotl = TvLike.objects.filter(id = id)
+    dtopl = PeopleLike.objects.filter(id = id)
+    #####좋아요######
+    
+    #####리뷰######
+    count = Review.objects.all().count()
+    
+    pagenum = request.GET.get("pagenum")
+    if not pagenum :
+        pagenum = "1"
+    pagenum = int( pagenum )
+    
+    start = ( pagenum - 1) * int(PAGE_SIZE)
+    end = start + int (PAGE_SIZE)
+    
+    if end > count :
+        end = count
+    dtox = Review.objects.filter(num = id).order_by("-num")[start:end] #id 를 ReviewSymp에서 받아온 글번호들로,,,,
+    number = count - (pagenum-1)*int(PAGE_SIZE)                     # 50 - (2-1) * 5
+    
+    startpage = pagenum // PAGE_BLOCK * PAGE_BLOCK + 1      # (보고싶은 페이지)/5 * 5 + 1
+    if pagenum % PAGE_BLOCK == 0 :                                      # 엔드페이지에도 영향이 가게 앞서서 위치 잡아줘야함
+        startpage -= PAGE_BLOCK
+    endpage = startpage + PAGE_BLOCK - 1
+    pagecount = count //PAGE_SIZE
+    
+    if count % PAGE_SIZE > 0 :
+        pagecount += 1
+    if endpage > pagecount :
+        endpage = pagecount
+    
+    pages = range(startpage, endpage + 1)
+    #####리뷰######
+    template = loader.get_template("stat.html")
+    context={
+        "id":id,     
+        
+        #리뷰
+        "dtox":dtox,
+        "count" : count,
+        "pagenum" : pagenum,
+        "number" : number,
+        "startpage" : startpage,
+        "endpage" : endpage,
+        "pageblock" : PAGE_BLOCK,
+        "pagecount" : pagecount,
+        "pages" : pages,
+        
+        #좋아요
+        "dtoml": dtoml,
+        "dtotl" : dtotl,
+        "dtopl" : dtopl,
+        }
+    return HttpResponse(template.render(context,request))
+
 
 def modifyview(request):
     id = request.session.get( "id" )
@@ -402,12 +507,3 @@ def editnickname(request):
         "dto":dto
         }
     return HttpResponse( template.render( context, request ) )
-
-def stat(request):
-    id = request.session.get('id')
-    template = loader.get_template("stat.html")
-    context={
-        "id":id,
-        
-        }
-    return HttpResponse(template.render(context,request))

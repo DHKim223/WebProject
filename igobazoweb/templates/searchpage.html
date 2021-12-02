@@ -143,14 +143,16 @@
 						{% for p in peoples %}
 						<div class="value_content">
 							<div class="poster">
-								<img src="{{p.poster}}" alt="{{p.contentNm}}" onclick="location='detailpage?contentCd={{p.contentCd}}&media_type={{p.media_type}}'">
+								<img src="{{p.profile}}" alt="{{p.peopleNm}}" onclick="location='detailpage?peopleCd={{p.peopleCd}}&media_type={{p.media_type}}'">
 							</div>
 							<div class="info">
-								<p class="title"><a href="detailpage?contentCd={{p.contentCd}}&media_type={{p.media_type}}"><b>{{p.contentNm}}({{p.originalNm}})</b></a><p>
+								<p class="title"><a href="detailpage?peopleCd={{p.peopleCd}}&media_type={{p.media_type}}"><b>{{p.peopleNm}}</b></a><p>
+								<!--  
 								<p class="star"><b>★</b><em>(참여 : 명)</em></p>
 								<p class="detailinfo"> {{p.release_date}}</p>
 								<p class="detailinfo"> {{p.genre}}</p>
 								<h5 class="overview">{{p.overview}}</h5>
+								-->
 							</div>
 						</div>
 						{% endfor %}

@@ -1,3 +1,28 @@
+.star {
+  position: relative;
+  font-size: 3rem;
+  color: #ddd;
+}
+  
+.star input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+  
+.star span {
+  width: 0;
+  position: absolute; 
+  left: 0;
+  color: yellow;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+
 html,body{
 	margin : 0px;
 	padding : 0px;
@@ -155,6 +180,6 @@ h1{
 	cursor:pointer;
 }
 
-.detail_poster {display : block; margin-bottom: 10px; position:relative; left: 35%;}
+.detail_poster {display : block; margin-bottom: 10px; position:relative; left: 42%;}
 
 .searchform button {position: relative; top:16px;}

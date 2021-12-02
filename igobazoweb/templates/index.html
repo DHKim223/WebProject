@@ -156,7 +156,7 @@
                                        <div class="rank"><strong>{{tv.rank}}</strong></div>
                                    </div>
                                    <div class="infor">
-                                       <h3><strong><a href="detailpage?contentCd=={{kr.contentCd}}&media_type={{tv.media_type}}" >{{tv.contentNm}}</a></strong></h3>
+                                       <h3><strong><a href="detailpage?contentCd=={{tv.contentCd}}&media_type={{tv.media_type}}" >{{tv.contentNm}}</a></strong></h3>
                                        <h5><span>{{tv.release_date}}</span></h5>
                                        <h5><span>평균★ 0</span></h5>
                                    </div>
@@ -175,7 +175,7 @@
                            	{% for filmo in actor %}
                                <div class="content_box">
                                    <div class="poster">
-                                       <img class="cursor" src="{{filmo.poster}}"  alt="{{filmo.contentNm}}" onclick="location='detailpage?contentCd=={{filmo.contentCd}}&media_type={{filmo.media_type}}'">
+                                       <img class="cursor" src="{{filmo.poster}}"  alt="{{filmo.contentNm}}" onclick="location='detailpage?contentCd={{filmo.contentCd}}&media_type={{filmo.media_type}}'">
                                    </div>
                                    <div class="infor">
                                        <h3><strong><a href="detailpage?contentCd={{filmo.contentCd}}&media_type={{filmo.media_type}}" >{{filmo.contentNm}}</a></strong></h3>
@@ -197,7 +197,7 @@
                            	{% for filmo in director %}
                                <div class="content_box">
                                    <div class="poster">
-                                       <img class="cursor" src="{{filmo.poster}}"  alt="{{filmo.contentNm}}" onclick="location='detailpage?contentCd=={{filmo.contentCd}}&media_type={{filmo.media_type}}'">
+                                       <img class="cursor" src="{{filmo.poster}}"  alt="{{filmo.contentNm}}" onclick="location='detailpage?contentCd={{filmo.contentCd}}&media_type={{filmo.media_type}}'">
                                    </div>
                                    <div class="infor">
                                        <h3><strong><a href="detailpage?contentCd={{filmo.contentCd}}&media_type={{filmo.media_type}}" >{{filmo.contentNm}}</a></strong></h3>

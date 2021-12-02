@@ -15,6 +15,7 @@ urlpatterns = [
     path( "loginpro", views.loginpro, name="loginpro" ),
     path( "logout", views.logout, name="logout" ),
     path( "userinfo",views.userinfo,name = "userinfo"),
+    path( "stat",views.stat,name = "stat"),
     path( "modifyview",views.modifyview,name = "modifyview"),
     path( "delete",views.delete,name = "delete"),
     path("deletepro",views.deletepro,name="deletepro"),
@@ -25,7 +26,6 @@ urlpatterns = [
     path("nickverify",views.nickverify,name="nickverify"),
     path("editnickname",views.editnickname,name="editnickname"),
     path("editnickpro",views.editnickpro,name="editnickpro"),
-    path("stat",views.stat,name="stat"),
     
     # Index Page
     path("index", views_page.index, name="index"),
@@ -36,7 +36,7 @@ urlpatterns = [
     # Review Page
     path("review", views_review.review, name="review"),
     path( "detail", views_review.detail, name="detail" ),
-    path("detailsymp", views_review.detailsymp, name="detailsymp"),
+    # path("detailsymp", views_review.detailsymp, name="detailsymp"),
     
     path("writeprohong", views_review.writeprohong, name="writeprohong"),
     
@@ -44,6 +44,9 @@ urlpatterns = [
     path("modifyprohong", views_review.modifyprohong, name="modifyprohong"),
     
     path("deleteprohong",views_review.deleteprohong,name="deleteprohong"),
+    
+    path("detailstarp", views_review.detailstarp, name="detailstarp"),
+    path("reviewsymp", views_review.reviewsymp, name="reviewsymp"),
     
     # Album
     path("album",views_review.album,name="album"),
@@ -55,7 +58,8 @@ urlpatterns = [
     path("album_delete",views_review.album_delete,name="album_delete"),
     
     #Like
-    path("addmvwishlist", views_like.addmvwishlist, name="addmvwishlist"),
-    path("rmmvwishlist", views_like.rmmvwishlist, name="rmmvwishlist"),
+    path("addwishlist", views_like.addwishlist, name="addwishlist"),
+    path("rmwishlist", views_like.rmwishlist, name="rmwishlist"),
+    
 
 ]

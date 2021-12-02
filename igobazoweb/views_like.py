@@ -3,50 +3,73 @@ import logging
 from django.http.response import HttpResponse
 from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
-from igobazoweb.models import MovieLike
+from igobazoweb.models import MovieLike, PeopleLike, TvLike
 from django.utils.dateformat import DateFormat
 from datetime import datetime
 
 
 @csrf_exempt  
-def addmvwishlist(request):
+def addwishlist(request):
     id = request.session.get('id')
-    contentCd = request.GET.get("contentCd")
     media_type = request.GET.get("media_type")
-    #contentCd = request.POST["contentCd"]
-    num = MovieLike.objects.all().count()
-    if num == None :          
-        num = 1
-    else :       
-        num += 1
     
+    if media_type == "person" :
+        peopleCd = request.GET.get("peopleCd")
         
-    
-    #template = loader.get_template("detailpage.html")
-    #context = {
-     #  
-      # }
-
-    dto = MovieLike(
-        mlnum = num,
-        mlid = id,
-        contentCd = contentCd,
-        modmvldate = DateFormat(datetime.now()).format("Y-m-d"),       
+        PeopleLike.objects.create(
+            id = id,
+            peopleCd = peopleCd,
+            regdate = DateFormat( datetime.now() ).format("Y-m-d")
         )
-    dto.save()
+        print("PeopleLike DB insert", peopleCd, media_type)
+        
+    elif media_type == "movie" :
+        contentCd = request.GET.get("contentCd")
+        
+        MovieLike.objects.create(
+            id = id,
+            contentCd = contentCd,
+            media_type = media_type,
+            regdate = DateFormat( datetime.now() ).format("Y-m-d")
+        )
+        print("MovieLike DB insert", contentCd, media_type)
+        
+    elif media_type == "tv" :
+        contentCd = request.GET.get("contentCd")
+        
+        TvLike.objects.create(
+            id = id,
+            contentCd = contentCd,
+            media_type = media_type,
+            regdate = DateFormat( datetime.now() ).format("Y-m-d")
+        )
+        print("TvLike DB insert", contentCd, media_type)
+        
+    else : pass
     
     return redirect("index")
-    #return HttpResponse( template.render( context, request ) )
-    #return redirect("detailpage?contentCd="+contentCd+"&media_type"+media_type)  
-    #return HttpResponseRedirect(request.POST['path'])
-    #return redirect(request.POST.get('next'))
-@csrf_exempt    
-def rmmvwishlist(request):   
-    id = request.session.get( "id" )
-    
-    contentCd = request.GET.get("contentCd")
 
-    dto= MovieLike.objects.filter(mlid = id ).filter(contentCd=contentCd)
+@csrf_exempt    
+def rmwishlist(request):   
+    id = request.session.get( "id" )
+    media_type = request.GET.get("media_type")
+    
+    if media_type == "movie" :
+        contentCd = request.GET.get("contentCd")
+        dto= MovieLike.objects.filter(id = id).filter(contentCd=contentCd)
+        print("MovieLike DB delete", contentCd, media_type)
+        
+    elif media_type == "tv" :
+        contentCd = request.GET.get("contentCd")
+        dto= TvLike.objects.filter(id = id).filter(contentCd=contentCd)
+        print("TvLike DB delete", contentCd, media_type)
+        
+    elif media_type == "person" :
+        peopleCd = request.GET.get("peopleCd")
+        dto= PeopleLike.objects.filter(id = id).filter(peopleCd=peopleCd)
+        print("PeopleLike DB delete", peopleCd, media_type)
+        
+    else: pass
     
     if dto :
         dto.delete()        
@@ -62,3 +85,4 @@ def rmmvwishlist(request):
        }
     
     return HttpResponse( template.render( context, request ) )
+

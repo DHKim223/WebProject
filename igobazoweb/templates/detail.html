@@ -101,13 +101,15 @@
 						이 글에 공감하시나요? 그럼 옆 버튼을 눌러주세요!
 					</td>
 					<td>
-						{% csrf_token %}
-						<form method="post" action="detailsymp">					
+
+						<!-- <form method="post" action="reviewsymp"> -->
+						<form method="get" action="reviewsymp">
+						{% csrf_token %}					
 							<input type="hidden" name="sympathy" value="{{dto.sympathy}}">
 							<input type="hidden" name="num" value="{{dto.num}}">
-							<!-- <button type="submit" class="btn btn-danger btn-lg">
-							확  인;
-							</button> -->
+                			<input type="hidden" name="contentCd" value="{{contentCd}}" >
+                			<input type="hidden" name="media_type" value="{{media_type}}" >
+							
 							<input id ="btn5" type="submit" value="">							
 											
 						</form>	 
